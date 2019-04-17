@@ -43,7 +43,13 @@
                             <a href='{{ route('video.index') }}' class='nav-link'>Videos</a>
                         </li>
                         <li class="nav-item">
-                            <a href='{{ route('video.create') }}' class='nav-link'>Create</a>
+                            <a href='{{ route('video.create') }}' class='nav-link'>Create Video</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='{{ route('topic.index') }}' class='nav-link'>Topics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='{{ route('topic.create') }}' class='nav-link'>Create Topic</a>
                         </li>
                         @guest
                             <li class="nav-item">

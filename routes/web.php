@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/video', 'VideoController');
+Route::resource('/topic', 'TopicController');
 
 Auth::routes();
 

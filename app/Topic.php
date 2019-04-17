@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Topic extends Model
 {
 	protected $guarded = [];
-	public function topic()
+	public function videos()
 	{
-		return $this->belongsTo(Topic::class);
+		return $this->hasMany(Video::class);
 	}
 }
