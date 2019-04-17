@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Topic;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class VideoController extends Controller
      */
     public function create()
     {
-        return view('video.create');
+        $topics = Topic::all();
+        return view('video.create', compact('topics'));
     }
 
     /**
@@ -40,10 +42,14 @@ class VideoController extends Controller
             'title' => 'required',
             'url' => 'required',
         ]);
-        Video::create([
+        $args = [
             'title' => request('title'),
             'url' => request('url'),
-        ]);
+        ];
+        if (request('topic')) {
+            $args['topic_id'] = request('topic');
+        }
+        Video::create($args);
         return back()->withMessage('Added successfully');
     }
 

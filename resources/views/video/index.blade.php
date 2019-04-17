@@ -18,6 +18,13 @@
 					</form>
 				</div>
 				<!-- /.d-flex -->
+				@if($video->topic)
+				<div class='py-2'>
+					<a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $video->topic->id]) }}">
+						{{$video->topic->title}}
+					</a>
+				</div>
+				@endif
 				<p> {{$video->url}} </p>
 			</div>
 		</div>

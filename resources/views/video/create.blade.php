@@ -8,6 +8,15 @@
 	<form action="{{ route('video.store') }}" method="post">
 		@csrf
 		<div class='form-group'>
+			<label for="topic">Topic</label>
+			<select name="topic" class="form-control" id="topic">
+				@foreach ($topics as $topic)
+					<option value="{{$topic->id}}">{{$topic->title}}</option>
+				@endforeach
+			</select>
+		</div>
+		<!-- /.form-group -->
+		<div class='form-group'>
 			<label for="title">Title</label>
 			<input type="text" name="title" id="title" class="form-control">
 		</div>
