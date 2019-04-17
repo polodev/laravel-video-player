@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -39,6 +39,12 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item">
+                            <a href='{{ route('video.index') }}' class='nav-link'>Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='{{ route('video.create') }}' class='nav-link'>Create</a>
+                        </li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -73,6 +79,10 @@
         </nav>
 
         <main class="py-4">
+            <div class='container'>
+                @include('partials/errors')
+                @include('partials/message')
+            </div>
             @yield('content')
         </main>
     </div>

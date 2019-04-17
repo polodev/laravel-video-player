@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return redirect(route('video.index'));
 });
+
+Route::resource('/video', 'VideoController');
 
 Auth::routes();
 
