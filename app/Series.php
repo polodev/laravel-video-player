@@ -13,6 +13,6 @@ class Series extends Model
 	}
 	public function videos()
 	{
-		return $this->hasMany(Video::class);
+		return $this->hasMany(Video::class, 'series_id');
 	}
 }

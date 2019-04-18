@@ -15,8 +15,9 @@ Route::get('/', function () {
 	return redirect(route('series.index'));
 });
 
-// Route::resource('/video', 'VideoController');
+Route::resource('/video', 'VideoController');
 Route::resource('/series', 'SeriesController');
+Route::post('/series_video_generate/{series}', 'SeriesController@generate_videos')->name('series.generate_videos');
 Route::resource('/topic', 'TopicController');
 
 Auth::routes();
