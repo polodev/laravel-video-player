@@ -11,11 +11,14 @@
 		<div class='card mb-3'>
 			<div class='card-body'>
 				<div class='d-flex justify-content-between'>
-					<h3>
+					<h4>
 						<a href="{{ route('topic.show', ['topic' => $topic->id]) }}">
 							 {{ $topic->title }} 
+							 @if($topic->series)
+							 	- ({{count($topic->series)}})
+							 @endif
 						</a>
-					</h3>
+					</h4>
 					<form method="post" action="{{ route('topic.destroy', ['topic' => $topic->id]) }}">
 						@csrf
 						@method('DELETE')

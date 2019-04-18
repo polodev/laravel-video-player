@@ -72,7 +72,8 @@ class SeriesController extends Controller
      */
     public function edit(Series $series)
     {
-        //
+        $topics = Topic::all();
+        return view('series.edit', compact('topics', 'series'));
     }
 
     /**
@@ -84,7 +85,18 @@ class SeriesController extends Controller
      */
     public function update(Request $request, Series $series)
     {
-        //
+        
+        $this->validate($request, [
+            'title' => 'required',
+            'url' => 'required',
+        ]);
+        $series->title = request('title');
+        $series->url = request('url');
+        if (request('topic')) {
+            $series->topic_id = request('topic');
+        }
+        $series->save();
+        return back()->withMessage('Updated  successfully');
     }
 
     /**

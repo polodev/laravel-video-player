@@ -2,7 +2,7 @@
 
 @section('content')
 <h2>
-	{{ $series->title }}
+	SERIES:: {{ $series->title }}
 </h2>
 <p>
 	{{ $series->url }}
