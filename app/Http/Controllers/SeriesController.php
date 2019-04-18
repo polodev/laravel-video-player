@@ -163,8 +163,7 @@ class SeriesController extends Controller
       Video::where('series_id', $series->id)->delete();
         // now add all
       $video_table_args = $this->generate_video_args($series);
-      return $video_table_args;
       Video::insert($video_table_args);
-      back()->withMessage('Generate Videos Successfully');
+      return back()->withMessage('Generate Videos Successfully');
     }
   }
