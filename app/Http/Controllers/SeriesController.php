@@ -55,6 +55,9 @@ class SeriesController extends Controller
       return back()->withMessage('Added successfully');
     }
 
+
+
+
     /**
      * Display the specified resource.
      *
@@ -63,11 +66,18 @@ class SeriesController extends Controller
      */
     public function show(Series $series)
     {
+      return view('series.show', compact('series'));
+    }
 
-      // $url = $series->url;
-      // $all_files = File::allFiles($url);
-      // var_dump($all_files);
-        return view('series.show', compact('series'));
+    public function backup()
+    {
+        echo "<div style='margin: 10px; padding: 10px; border: 1px solid #ddd;'> <div class='card-body'>";
+          echo "__extension__" . $extension . "<br>";
+          echo "__path_name__" . $path_name . "<br>";
+          echo "__file_name__" . $file_name  . "<br>";
+          echo "__file_name__ext" . $file_name_without_extension  . "<br>";
+          echo "__p__" . $file->getPath() . "<br>";
+        echo "</div></div>";
     }
 
     /**
@@ -116,23 +126,45 @@ class SeriesController extends Controller
       $series->delete();
       return back();
     }
+    public function generate_video_args(Series $series)
+    {
+      $url               = $series->url;
+      $series_id         = $series->id;
+      $files             = File::allFiles($url);
+      $allowed_extension = ['mp4', 'avi', 'mov'];
+      $files             = array_filter($files, function ($file) use($allowed_extension) {
+        $extension =  $file->getExtension();
+        return in_array($extension, $allowed_extension);
+      });
+
+      $video_table_args = [];
+
+      foreach ($files as $file) {
+        $extension = $file->getExtension() ;
+        $path_name = $file->getPathname() ;
+        $file_name = $file->getFilename() ;
+        $extension_with_dot = ".{$extension}";
+        $file_name_without_extension = basename($path_name, $extension_with_dot);
+        $video_table_args[] = [
+          'extension' => $extension,
+          'path_name' => $path_name,
+          'file_name' => $file_name,
+          'file_name_without_extension' => $file_name_without_extension,
+          'series_id' => $series_id,
+        ];
+
+      }
+      return $video_table_args;
+    }
 
     public function generate_videos(Series $series)
     {
         // delete all 
       Video::where('series_id', $series->id)->delete();
         // now add all
-      $url = $series->url;
-      $all_files = File::allFiles($url);
-      foreach ($all_files as $file) {
-        Video::create([
-          'relative_path' => $file->relativePath,
-          'relative_path_name' => $file->relativePathname,
-          'path_name' => $file->pathName,
-          'file_name' => $file->fileName,
-          'series_id' => $series->id,
-        ]);
-      }
+      $video_table_args = $this->generate_video_args($series);
+      return $video_table_args;
+      Video::insert($video_table_args);
       back()->withMessage('Generate Videos Successfully');
     }
   }
