@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-	return redirect(route('video.index'));
+	return redirect(route('series.index'));
 });
 
-Route::resource('/video', 'VideoController');
+// Route::resource('/video', 'VideoController');
+Route::resource('/series', 'SeriesController');
 Route::resource('/topic', 'TopicController');
 
 Auth::routes();

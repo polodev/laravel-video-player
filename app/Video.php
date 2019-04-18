@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Video extends Model
 {
 	protected $guarded = [];
-	public function topic()
+	public function series()
 	{
-		return $this->belongsTo(Topic::class);
+		return $this->belongsTo(Series::class);
 	}
 }

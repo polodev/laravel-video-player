@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class='container'>
+<div class=''>
 	<h2>Add a Topic</h2>
 
 	<form action="{{ route('topic.store') }}" method="post">

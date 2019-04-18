@@ -40,10 +40,10 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a href='{{ route('video.index') }}' class='nav-link'>Videos</a>
+                            <a href='{{ route('series.index') }}' class='nav-link'>Series</a>
                         </li>
                         <li class="nav-item">
-                            <a href='{{ route('video.create') }}' class='nav-link'>Create Video</a>
+                            <a href='{{ route('series.create') }}' class='nav-link'>Create series</a>
                         </li>
                         <li class="nav-item">
                             <a href='{{ route('topic.index') }}' class='nav-link'>Topics</a>
@@ -88,8 +88,8 @@
             <div class='container'>
                 @include('partials/errors')
                 @include('partials/message')
+                @yield('content')
             </div>
-            @yield('content')
         </main>
     </div>
 </body>

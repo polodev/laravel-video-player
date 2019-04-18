@@ -3,9 +3,9 @@
 @section('content')
 
 <div class=''>
-	<h2>Add a video</h2>
+	<h2>Add a series</h2>
 
-	<form action="{{ route('video.store') }}" method="post">
+	<form action="{{ route('series.store') }}" method="post">
 		@csrf
 		<div class='form-group'>
 			<label for="topic">Topic</label>

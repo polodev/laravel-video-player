@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
 	protected $guarded = [];
-	public function videos()
+	public function series()
 	{
-		return $this->hasMany(Video::class);
+		return $this->hasMany(Series::class);
 	}
 }

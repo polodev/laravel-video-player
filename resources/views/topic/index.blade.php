@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class='container'>
+<div class=''>
+	<h2>All topics</h2>
+	<div class="mb-3">
+		<a href='{{ route('topic.create') }}' class='btn btn-info'>Create a topic</a>
+	</div>
+
 	@foreach ($topics as $topic)
 		<div class='card mb-3'>
 			<div class='card-body'>
@@ -20,6 +25,9 @@
 			</div>
 		</div>
 	@endforeach
+	@if(!count($topics))
+		<h3 class="text-danger">No topics found</h3>
+	@endif
 </div>
 
 
