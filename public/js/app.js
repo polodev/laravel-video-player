@@ -2581,13 +2581,28 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     this.player = Object(video_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this.$refs.videoPlayer, this.options, function onPlayerReady() {
       console.log('onPlayerReady', this);
     });
-    this.player.playbackRate(2);
     this.player.on('ratechange', function () {
       localStorage.setItem('user_speed', this.playbackRate());
     });
+    this.player.on('ended', function () {
+      console.log('ended');
+    });
+    setTimeout(function () {
+      _this.setPlayback();
+    }, 1000);
+  },
+  methods: {
+    setPlayback: function setPlayback() {
+      console.log('calling set playback after 1000');
+      var user_speed = localStorage.getItem('user_speed');
+      user_speed = user_speed ? user_speed : 2;
+      this.player.playbackRate(user_speed);
+    }
   },
   beforeDestroy: function beforeDestroy() {
     if (this.player) {
