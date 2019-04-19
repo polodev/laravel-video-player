@@ -29,6 +29,9 @@
 						{{ $video->file_name_without_extension }}
 					</a>
 				</p>
+				<p class="text-info">
+					<a href="{{$video->fullPathWithPrefix}}" target="_blank">Open video directly</a>
+				</p>
 				<p>
 					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small> 
 					<br>
