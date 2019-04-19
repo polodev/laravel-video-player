@@ -28,10 +28,7 @@ class Video extends Model
   			return $key;
   		}
   	}
-
   	return 0;
-
-  	// return $videos->first()->extension;
   }
 
 }
