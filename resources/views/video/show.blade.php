@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<?php 
-
-var_dump($current_video);
-
- ?>
+<example-component></example-component>
+<my-video></my-video>
 @endsection
