@@ -2526,6 +2526,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    video_source: {
+      type: String,
+      // default: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+      "default": "file:///Users/polodev/Documents/tuts_video/jeffreyway/laracast_git/Git-Me-Some-Version-Control-2-What-Does-Git-Add-Actually-Do.mp4"
+    },
+    next_url: {
+      type: String,
+      "default": null
+    }
+  },
   data: function data() {
     return {
       videoOptions: {
@@ -2533,9 +2544,10 @@ __webpack_require__.r(__webpack_exports__);
         controls: true,
         muted: false,
         language: 'en',
+        preload: 'auto',
         playbackRates: [0.7, 1.0, 1.5, 2.0, 2.5, 3.0],
         sources: [{
-          src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+          src: this.video_source
         }]
       },
       hello: "world"
@@ -2573,6 +2585,9 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return {};
       }
+    },
+    next_url: {
+      type: String
     }
   },
   data: function data() {
@@ -2590,14 +2605,18 @@ __webpack_require__.r(__webpack_exports__);
       localStorage.setItem('user_speed', this.playbackRate());
     });
     this.player.on('ended', function () {
-      console.log('ended');
+      if (_this.next_url) {
+        location.href = _this.next_url;
+      } else {
+        console.log('Video ended');
+      }
     });
     setTimeout(function () {
-      _this.setPlayback();
+      _this.setInitialPlayback();
     }, 1000);
   },
   methods: {
-    setPlayback: function setPlayback() {
+    setInitialPlayback: function setInitialPlayback() {
       console.log('calling set playback after 1000');
       var user_speed = localStorage.getItem('user_speed');
       user_speed = user_speed ? user_speed : 2;
@@ -96765,7 +96784,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("video-player", { attrs: { options: _vm.videoOptions } })],
+    [
+      _c("video-player", {
+        attrs: { next_url: _vm.next_url, options: _vm.videoOptions }
+      })
+    ],
     1
   )
 }

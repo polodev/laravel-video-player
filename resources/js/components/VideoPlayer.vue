@@ -7,7 +7,6 @@
 <script>
 import 'video.js/dist/video-js.css'
 import videojs from 'video.js';
-
   export default {
     name: "VideoPlayer",
     props: {
@@ -16,6 +15,9 @@ import videojs from 'video.js';
         default() {
           return {};
         }
+      },
+      next_url: {
+        type: String,
       }
     },
     data() {
@@ -27,22 +29,26 @@ import videojs from 'video.js';
       this.player = videojs(this.$refs.videoPlayer, this.options, function onPlayerReady() {
         console.log('onPlayerReady', this);
       })
-      
+
       this.player.on('ratechange', function () {
         localStorage.setItem('user_speed', this.playbackRate());
       });
 
-      this.player.on('ended', function () {
-        console.log('ended');
+      this.player.on('ended',  () => {
+        if (this.next_url) {
+          location.href = this.next_url
+        } else {
+          console.log('Video ended');
+        }
       })
 
       setTimeout( () => {
-        this.setPlayback();
+        this.setInitialPlayback();
       }, 1000)
 
     },
     methods: {
-      setPlayback() {
+      setInitialPlayback() {
         console.log('calling set playback after 1000');
         var user_speed = localStorage.getItem('user_speed');
         user_speed = user_speed ? user_speed : 2;
