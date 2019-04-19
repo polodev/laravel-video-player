@@ -61,7 +61,21 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        return view('video.show', compact('video'));
+
+      $series_id    = $video->series_id;
+      $previous     = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
+      $next         = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
+      $all_videos = $video->series->videos;
+
+      $data = [
+        'all_videos'      => $all_videos,
+        'next'            => $next,
+        'previous'        => $previous,
+        'current_video'   => $video,
+      ];
+      
+      return view('video.show', $data);
+
     }
 
     /**
