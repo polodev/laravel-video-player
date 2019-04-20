@@ -20,23 +20,24 @@
 	@foreach ($series->videos as $video)
 		<div class='card my-2'>
 			<div class='card-body'>
-				<div class='mb2'>
-					Video No: {{ $video->video_index() + 1 }} 
+				<div class='my-1'>
+					Video No: {{ $video->video_index() + 1 }}  <br/>
+					Video Id: {{ $video->id }} 
 				</div>
 
-				<p>
+				<div class="my-1">
 					<a href="{{ route('video.show', ['video' => $video->id]) }}">
 						{{ $video->file_name_without_extension }}
 					</a>
-				</p>
-				<p class="text-info">
+				</div>
+				<div class="text-info my-1">
 					<a href="{{$video->fullPathWithPrefix}}" target="_blank">Open video directly</a>
-				</p>
-				<p>
+				</div>
+				<div class="my-1">
 					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small> 
 					<br>
 					<small> Status: {{ $video->completed ? "Completed" : 'Not Completed' }} </small>
-				</p>
+				</div>
 			</div>
 		</div>
 
