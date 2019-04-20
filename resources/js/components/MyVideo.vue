@@ -9,8 +9,8 @@
     props: {
       video_source: {
         type: String,
-        // default: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
-        default: "file:///Users/polodev/Documents/tuts_video/jeffreyway/laracast_git/Git-Me-Some-Version-Control-2-What-Does-Git-Add-Actually-Do.mp4"
+        default: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+        // default: "file:///Users/polodev/Documents/tuts_video/jeffreyway/laracast_git/Git-Me-Some-Version-Control-2-What-Does-Git-Add-Actually-Do.mp4"
       },
       next_url: {
         type: String,
