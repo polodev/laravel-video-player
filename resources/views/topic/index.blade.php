@@ -19,7 +19,7 @@
 							 @endif
 						</a>
 					</h4>
-					<form method="post" action="{{ route('topic.destroy', ['topic' => $topic->id]) }}">
+					<form onsubmit="return confirm('Are you sure you want to delete this entry')" method="post" action="{{ route('topic.destroy', ['topic' => $topic->id]) }}">
 						@csrf
 						@method('DELETE')
 						<button type="submit" class="btn btn-danger">Delete</button>
