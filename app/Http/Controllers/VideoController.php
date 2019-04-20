@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Topic;
 use App\Video;
-use Illuminate\Http\Request;
+use App\VideoStream;
 use File;
+use Illuminate\Http\Request;
 use Response;
 class VideoController extends Controller
 {
@@ -56,11 +57,8 @@ class VideoController extends Controller
 
     // render video in laravel
     public function render_video(Video $video) {
-      $fileContents = File::get($video->path_name);
-      $response = Response::make($fileContents, 200);
-      $response->header('Content-Type', "video/mp4");
-      $i = 0 ;
-      return $response;
+      $stream = new VideoStream($video->path_name);
+      $stream->start(); 
     }
 
     /**
@@ -72,10 +70,10 @@ class VideoController extends Controller
     public function show(Video $video)
     {
 
-      $series_id    = $video->series_id;
-      $previous     = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
-      $next         = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
-      $all_videos = $video->series->videos;
+      $series_id          = $video->series_id;
+      $previous           = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
+      $next               = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
+      $all_videos         = $video->series->videos;
       $current_video_link = route('render_video', ['video' => $video->id]);
 
       $data = [
