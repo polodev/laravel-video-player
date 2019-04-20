@@ -12,7 +12,7 @@
 	<!-- /.card-header -->
 	<div class='card-body d-flex justify-content-center'>
 		<my-video
-		video_source2="{{$current_video->fullPathWithPrefix}}"
+		video_source="{{$current_video->fullPathWithPrefix}}"
 		@if($next)
 			next_url="{{ route('video.show', ['video' => $next->id]) }}"
 		@endif
