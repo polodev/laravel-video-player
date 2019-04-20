@@ -10,14 +10,16 @@
 		</h2>
 	</div>
 	<!-- /.card-header -->
-	<div class='card-body d-flex justify-content-center'>
-		<my-video
-		video_source="{{$current_video->fullPathWithPrefix}}"
-		@if($next)
-			next_url="{{ route('video.show', ['video' => $next->id]) }}"
-		@endif
+	<div class='card-body d-flex justify-content-center ' id="video-player-card">
 
-		></my-video>
+		<div class="d-block">
+			<my-video
+				video_source="{{$current_video_link}}"
+				@if($next)
+					next_url="{{ route('video.show', ['video' => $next->id]) }}"
+				@endif
+			></my-video>
+		</div>
 	</div>
 	<!-- /.card-body -->
 </div>
@@ -40,7 +42,7 @@
 					</a>
 				</div>
 				<div class="text-info my-1">
-					<a href="{{$video->fullPathWithPrefix}}" target="_blank">Open video directly</a>
+					<a href="{{ route('render_video', ['video' => $video->id]) }}" target="_blank">Open video directly</a>
 				</div>
 				<div>
 					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small> 

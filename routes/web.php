@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/video', 'VideoController');
+Route::get('/render-video/{video}', 'VideoController@render_video')->name('render_video');
+
 Route::resource('/series', 'SeriesController');
 Route::post('/series_video_generate/{series}', 'SeriesController@generate_videos')->name('series.generate_videos');
 Route::resource('/topic', 'TopicController');

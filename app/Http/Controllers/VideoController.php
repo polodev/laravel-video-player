@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Topic;
 use App\Video;
 use Illuminate\Http\Request;
-
+use File;
+use Response;
 class VideoController extends Controller
 {
     /**
@@ -53,6 +54,15 @@ class VideoController extends Controller
         return back()->withMessage('Added successfully');
     }
 
+    // render video in laravel
+    public function render_video(Video $video) {
+      $fileContents = File::get($video->path_name);
+      $response = Response::make($fileContents, 200);
+      $response->header('Content-Type', "video/mp4");
+      $i = 0 ;
+      return $response;
+    }
+
     /**
      * Display the specified resource.
      *
@@ -66,15 +76,19 @@ class VideoController extends Controller
       $previous     = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
       $next         = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
       $all_videos = $video->series->videos;
+      $current_video_link = route('render_video', ['video' => $video->id]);
 
       $data = [
-        'all_videos'      => $all_videos,
-        'next'            => $next,
-        'previous'        => $previous,
-        'current_video'   => $video,
-      ];
-      
-      return view('video.show', $data);
+        'all_videos'         => $all_videos,
+        'next'               => $next,
+        'previous'           => $previous,
+        'current_video'      => $video,
+        'current_video_link' => $current_video_link,
+        ];
+
+        
+
+        return view('video.show', $data);
 
     }
 
