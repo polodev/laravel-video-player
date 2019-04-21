@@ -152,6 +152,11 @@ class SeriesController extends Controller
         return in_array($extension, $allowed_extension);
       });
 
+      // most helpful sorting option for me
+      usort($files, function($a, $b) {
+        return strnatcmp($a->getPathname(), $b->getPathname());
+      });
+
       $video_table_args = [];
 
       foreach ($files as $file) {
