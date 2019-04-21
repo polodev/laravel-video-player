@@ -2,16 +2,16 @@
 
 namespace App\Libraries\HelperTraits;
 
-trait MacSerieTrait {
+trait SerieTrait {
 
 	public static function boiler_plate() {
-		$prefix = '/Users/polodev/Documents/tuts_video/jeffreyway/';
+		$prefix = 'jeffreyway/';
 		$folders = [];
 		return self::generate_single_series($prefix, $folders);
 	}
 
-	public static function jeffrey_way_mac() {
-		$prefix = '/Users/polodev/Documents/tuts_video/jeffreyway/';
+	public static function jeffrey_way() {
+		$prefix = 'jeffreyway/';
 		$folders = [
 			[
 				'short_url'    => 'laracast_git',
@@ -162,8 +162,8 @@ trait MacSerieTrait {
 		return self::generate_single_series($prefix, $folders);
 	}
 
-	public static function code_course_mac() {
-		$prefix = '/Users/polodev/Documents/tuts_video/codecourse/';
+	public static function code_course() {
+		$prefix = 'codecourse/';
 		$folders = [
 			[
 				'short_url' => 'Anonymous relationships in Laravel',
@@ -326,12 +326,12 @@ trait MacSerieTrait {
 		];
 		return self::generate_single_series($prefix, $folders);
 	}
-	public static function lynda_mac() {
-		$prefix_back = '/Users/polodev/Documents/tuts_video/lyn/back/';
-		$prefix_front = '/Users/polodev/Documents/tuts_video/lyn/front/';
-		$prefix_others = '/Users/polodev/Documents/tuts_video/lyn/others/';
-		$prefix_paid = '/Users/polodev/Documents/tuts_video/lyn/paid/';
-		$prefix_wp = '/Users/polodev/Documents/tuts_video/lyn/wp_lyn/';
+	public static function lynda() {
+		$prefix_back = 'lyn/back/';
+		$prefix_front = 'lyn/front/';
+		$prefix_others = 'lyn/others/';
+		$prefix_paid = 'lyn/paid/';
+		$prefix_wp = 'lyn/wp_lyn/';
 		$folders_back = [
 			[
 				'short_url' => 'Lynda - Design Patterns in PHP',
@@ -634,8 +634,8 @@ trait MacSerieTrait {
 		return array_merge($back, $front, $others, $paid, $wp);
 	}
 
-	public static function udemy_mac() {
-		$prefix_back = '/Users/polodev/Documents/tuts_video/ude/back/';
+	public static function udemy() {
+		$prefix_back = 'ude/back/';
 		$folders_back = [
 		  [
 		    'short_url' => 'Introduction to Modern Programming with PHP',
