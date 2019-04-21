@@ -24,7 +24,7 @@ class Helper {
 			return [
 				'title'    => $folder['short_url'],
 				'url'      => $prefix . $folder['short_url'],
-				'topic_id' => $folder['topic_id'],
+				'topic_ids' => $folder['topic_ids'],
 			];
 		}, $folders);
 		return $series;

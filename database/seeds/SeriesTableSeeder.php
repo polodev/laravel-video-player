@@ -19,8 +19,8 @@ class SeriesTableSeeder extends Seeder
     			'title' => $series['title'],
     			'url'   => $series['url'],
     		]);
-    		if ( isset( $series['topic_id'] ) && $series['topic_id'] ) {
-    			$new_series->topics()->attach($series['topic_id']);
+    		if ( isset( $series['topic_ids'] ) && $series['topic_ids'] ) {
+    			$new_series->topics()->attach($series['topic_ids']);
     		}
     	}
 
