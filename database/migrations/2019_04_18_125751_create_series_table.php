@@ -16,9 +16,7 @@ class CreateSeriesTable extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->bigInteger('topic_id')->nullable();
             $table->string('url');
-
             $table->timestamps();
         });
     }

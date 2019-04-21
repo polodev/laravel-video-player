@@ -40,7 +40,6 @@ class SeriesController extends Controller
      */
     public function store(Request $request)
     {
-      return request()->all();
       $this->validate($request, [
         'title' => 'required',
         'url' => 'required',
@@ -49,10 +48,11 @@ class SeriesController extends Controller
         'title' => request('title'),
         'url' => request('url'),
       ];
+      $series = Series::create($args);
       if (request('topic')) {
-        $args['topic_id'] = request('topic');
+        $topic_ids = request('topic');
+        $series->topics()->attach($topic_ids);
       }
-      Series::create($args);
       return back()->withMessage('Added successfully');
     }
 
@@ -130,6 +130,9 @@ class SeriesController extends Controller
     public function generate_video_args(Series $series)
     {
       $url               = $series->url;
+      if (! File::exists($url)) {
+        return false;
+      }
       $series_id         = $series->id;
       $files             = File::allFiles($url);
       $allowed_extension = ['mp4', 'avi', 'mov'];
@@ -164,6 +167,9 @@ class SeriesController extends Controller
       Video::where('series_id', $series->id)->delete();
         // now add all
       $video_table_args = $this->generate_video_args($series);
+      if (! $video_table_args) {
+        return 'Path not found ';
+      }
       Video::insert($video_table_args);
       return back()->withMessage('Generate Videos Successfully');
     }

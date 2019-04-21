@@ -21,14 +21,14 @@
 					</div>
 				</div>
 				<!-- /.d-flex -->
-				@if($series->topic && $topic_label)
+{{-- 				@if($series->topic && $topic_label)
 				<div class='py-2'>
 					<a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $series->topic->id]) }}">
 						{{$series->topic->title}}
 					</a>
 				</div>
 				@endif
-				<p> {{$series->url}} </p>
+ --}}				<p> {{$series->url}} </p>
 			</div>
 		</div>
 	@endforeach
