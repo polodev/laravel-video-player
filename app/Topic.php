@@ -11,4 +11,8 @@ class Topic extends Model
 	{
 		return $this->belongsToMany(Series::class, 'series_topic');
 	}
+	public function setTitleAttribute($value)
+  {
+      $this->attributes['title'] = ucfirst($value);
+  }
 }
