@@ -1,36 +1,40 @@
-laracast_git
-laracasts_30_days_to_learn_jquery
-laracasts_code_katas
-laracasts_design_patterns_in_php
-laracasts_es6
-laracasts_forum
-laracasts_handsoncommunity
-laracasts_how_do_i
-laracasts_how_to_read_code
-laracasts_incomplete_whatcha_working_on
-laracasts_learn_flexbox_through_examples
-laracasts_learn_laravel_forge
-laracasts_learn_laravel_mix
-laracasts_lets_build_a_forum_with_laravel
-laracasts_modern_css_for_backend_developer
-laracasts_object_oriented_bootcamp
-laracasts_professional_php_workflow_in_sublime_text_3
-laracasts_real_time_laravel_with_socket.io
-laracasts_redis
-laracasts_search_as_service
-laracasts_setup_a_mac_dev
-laracasts_solid
-laracasts_sublime_text_mastery
-laracasts_testing_jargon
-laracasts_the_magic_of_wordpress_custom_post_types
-laracasts_the_php_practitioner
-laracasts_understand_regular_expressions
-laracasts_various
-laracasts_vim_mastery
-laracasts_vue2
-laracasts_way_forge
-laracasts_way_laravel_5_7
-laracasts_way_laravel_authentication
-laracasts_way_testing_laravel
-laracasts_webpack_for_everyone
-laracasts_wordpress_plugin_development_essentials
+01 - Automatically separate user file uploads in Laravel - Automatically separate user file uploads in Laravel.mp4
+Anonymous relationships in Laravel
+Build a File Marketplace with Laravel
+Build a classified ads site
+Clean code Laravel-5-18-serial-prob
+Cloud Image Upload with Laravel
+DRYing up code with Eloquent Model Observers
+Drag and drop sorting with Laravel
+Dropdown Autocomplete Search Anything
+Eloquent By Example
+End-to-end Browser Testing with Laravel Dusk
+Flexible Social Authentication with Laravel
+Laravel Chatroom
+Laravel Queues
+Laravel on Heroku
+Laravel real-time private messages
+Laravel-multi-tenancy-Multi-database
+Learn Vue.js by example
+Learn Vuex
+Practical-Git
+Quick and easy avatar uploads
+Roles and permissions in Laravel
+Single-page Forum App- API
+The No Framework Framework
+The Pagination Builder
+The Repository Pattern in Laravel
+Tips for cleaner code
+Unit testing with PHPUnit
+Vue-Vuex Single Page App Boilerplate
+anonymous-relationships-in-laravel
+better-laravel-database-notifications
+code_course_laravel_nuxt_cart
+filtering-in-laravel
+filtering-in-laravel-blade
+filtering-in-laravel-vue-js
+laravel-api-resources
+laravel-datatables
+laravel-single-database-multi-tenancy
+nuxt-js-laravel-authentication
+reusable-laravel-comments
