@@ -23,5 +23,7 @@ class SeriesTableSeeder extends Seeder
     			$new_series->topics()->attach($series['topic_id']);
     		}
     	}
+
+        echo config('app.machine');
     }
 }
