@@ -34,6 +34,11 @@ trait TopicTrait {
 			'codecourse', // 22
 			'tools', // 23
 
+			'django', //24
+			'codeigniter', //25
+			'c' // 26
+
+
 
 		];
 	}

@@ -327,6 +327,65 @@ trait MacSerieTrait {
 		return self::generate_single_series($prefix, $folders);
 	}
 
+	public static function lynda_mac() {
+		$prefix = '/Users/polodev/Documents/tuts_video/lyn/back/';
+		$folders = [
+			[
+				'short_url' => 'Lynda - Design Patterns in PHP',
+				'topic_id' => [17, 4,],
+			],
+			[
+				'short_url' => 'Lynda - Design Patterns with Python',
+				'topic_id' => [17, 6,],
+			],
+			[
+				'short_url' => 'Lynda - Unit Testing with PHPUnit',
+				'topic_id' => [17, 4,],
+			],
+			[
+				'short_url' => 'Lynda - Up and Running with Linux for PHP Developers',
+				'topic_id' => [17, 4,],
+			],
+			[
+				'short_url' => 'Lynda - Up and Running with Python and Django',
+				'topic_id' => [17, 6, 24],
+			],
+			[
+				'short_url' => 'Lynda-MySQL Essential Training',
+				'topic_id' => [17, 14, 5,],
+			],
+			[
+				'short_url' => 'Lynda. Up and Running with PHP CodeIgniter',
+				'topic_id' => [17, 4, 25,],
+			],
+			[
+				'short_url' => 'Lynda.com - Object-Oriented Programming with PHP',
+				'topic_id' => [17, 4,],
+			],
+			[
+				'short_url' => 'Lynda.com - PHP with MySQL Essential Training 2013',
+				'topic_id' => [17, 4, 5, 14],
+			],
+			[
+				'short_url' => 'PHP MVC Framework CodeIgniter',
+				'topic_id' => [17, 4,],
+			],
+			[
+				'short_url' => 'PHP.with.MySQL.Beyond.the.Basics',
+				'topic_id' => [17, 4, 5, 14,],
+			],
+			[
+				'short_url' => 'Up and Running with C {AceMerlin}',
+				'topic_id' => [17, 26,],
+			],
+			[
+				'short_url' => 'lynda.com - Practical Apache Web Server Administration',
+				'topic_id' => [17, 13,],
+			],
+		];
+		return self::generate_single_series($prefix, $folders);
+	}
+
 
 
 
