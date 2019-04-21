@@ -42,6 +42,8 @@ trait TopicTrait {
 			'Business', // 29
 			'learning', // 30; 
 			'php framework', // 31; 
+			'magento', // 32; 
+			'testing', // 33
 
 
 

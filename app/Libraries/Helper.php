@@ -13,7 +13,8 @@ class Helper {
 			$jeffrey_way  = self::jeffrey_way_mac();
 			$code_course  = self::code_course_mac();
 			$lynda        = self::lynda_mac();
-			return array_merge($jeffrey_way, $code_course, $lynda);
+			$udemy        = self::udemy_mac();
+			return array_merge($jeffrey_way, $code_course, $lynda, $udemy);
 		}
 
 		return [];

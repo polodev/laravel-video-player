@@ -14,13 +14,13 @@ class TopicController extends Controller
      */
     public function index()
     {
-      $topics = Topic::latest()->paginate(15);
+      $topics = Topic::orderBy('title')->paginate(15);
 
       $tquery      = false;
       if (request('tquery')) {
         $tquery = request('tquery');
         $topics = Topic::where('title', 'LIKE', "%$tquery%")
-        ->latest()->paginate(15);
+        ->orderBy('title')->paginate(15);
       }
       return view('topic.index', compact('topics', 'tquery'));
     }

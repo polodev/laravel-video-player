@@ -634,6 +634,49 @@ trait MacSerieTrait {
 		return array_merge($back, $front, $others, $paid, $wp);
 	}
 
+	public static function udemy_mac() {
+		$prefix_back = '/Users/polodev/Documents/tuts_video/ude/back/';
+		$folders_back = [
+		  [
+		    'short_url' => 'Introduction to Modern Programming with PHP',
+		    'topic_ids' => [20, 4],
+		  ],
+		  [
+		    'short_url' => 'Udemy - Automate the Boring Stuff with Python Programming (2015)',
+		    'topic_ids' => [20, 6],
+		  ],
+		  [
+		    'short_url' => 'Udemy - Learn Top Ten PHP FrameWorks By Building Projects',
+		    'topic_ids' => [20, 4],
+		  ],
+		  [
+		    'short_url' => 'Udemy-become-a-wordpress-developer-php-javascript',
+		    'topic_ids' => [20, 4, 16],
+		  ],
+		  [
+		    'short_url' => '[FreeCourseSite.com] Udemy - Learn Python in 12.5 hours',
+		    'topic_ids' => [20, 6,],
+		  ],
+		  [
+		    'short_url' => '[FreeCourseSite.com] Udemy - Try Django 1.9  Build a Blog and Learn Python\'s #1 Library',
+		    'topic_ids' => [20, 6, 24,],
+		  ],
+		  [
+		    'short_url' => '[Tutsgalaxy.com] - Modern WordPress Plugin Design Course. Cut & Paste examples',
+		    'topic_ids' => [20, 16,],
+		  ],
+		  [
+		    'short_url' => 'udemy - Learn Nodejs by building 10 projects',
+		    'topic_ids' => [20, 8,],
+		  ],
+		  [
+		    'short_url' => 'udemy_learn_docker_from_scratch_to_docker_swarm_for_devops',
+		    'topic_ids' => [20, 23,],
+		  ],
+		];
+		$back =  self::generate_single_series($prefix_back, $folders_back);
+		return array_merge($back);
+	}
 
 
 
