@@ -19,15 +19,14 @@ $encoder = new \Riimu\Kit\PHPEncoder\PHPEncoder();
 $topic_ids = [17];
 
 $list = [
-	'Grammar Fundamentals',
-'Lynda - Amazon Web Services Essential Training (Aug 22, 2014)',
-'Lynda.com - Project Management Essentials',
-'Lynda.com.Camtasia.Studio.8.Essential.Training',
-'Management Fundamentals',
-'Sales Fundamentals with Jeff Bloomfield',
-'Screencasting Fundamentals',
-'Typing Fundamentals {Ace Merlin}',
-'lynda -  Speed Reading Fundamentals',
+	'Lynda - WordPress - Developing with Sass and Grunt js',
+'Lynda - WordPress Developer Tips Enqueuing Styles and Scripts Tutorial',
+'Lynda - WordPress Plugins Analytics',
+'Lynda - WordPress Plugins SEO',
+'Lynda - WordPress Plugins Social Media Buttons',
+'Lynda - WordPress Quick Tips Migration and Database Reset',
+'Lynda - WordPress REST API (WP-API) - First Look',
+'Lynda - WordPress and Internationalization',
 
 ];
 
@@ -46,7 +45,7 @@ $list_transfrom = generate_series($list, $topic_ids);
 $ltp =  $encoder->encode($list_transfrom, [
   'array.indent' => 2,
 ]);
-$file = fopen('hello.txt', 'w');
+$file = fopen('generated_list.txt', 'w');
 fwrite($file, $ltp);
 fclose($file);
 

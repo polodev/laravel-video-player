@@ -330,6 +330,8 @@ trait MacSerieTrait {
 		$prefix_back = '/Users/polodev/Documents/tuts_video/lyn/back/';
 		$prefix_front = '/Users/polodev/Documents/tuts_video/lyn/front/';
 		$prefix_others = '/Users/polodev/Documents/tuts_video/lyn/others/';
+		$prefix_paid = '/Users/polodev/Documents/tuts_video/lyn/paid/';
+		$prefix_wp = '/Users/polodev/Documents/tuts_video/lyn/wp_lyn/';
 		$folders_back = [
 			[
 				'short_url' => 'Lynda - Design Patterns in PHP',
@@ -415,7 +417,7 @@ trait MacSerieTrait {
         'topic_ids' => [17, 3,],
       ],
       [
-        'short_url' => "Lynda \xe2\x80\x93 Building a Website with Node.js and Express.js",
+        'short_url' => "Lynda_building_a_website_with_nodejs_express_js",
         'topic_ids' => [17, 8,],
       ],
       [
@@ -470,15 +472,166 @@ trait MacSerieTrait {
 		    'topic_ids' => [17, 30,],
 		  ],
 		];
+		$folders_paid = [
+		  [
+		    'short_url' => 'Advanced PHP',
+		    'topic_ids' => [17, 4],
+		  ],
+		  [
+		    'short_url' => 'Advanced WordPress_ Action and Filter Hooks',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Building APIs in PHP Using the Silex Micro Framework',
+		    'topic_ids' => [17, 31,],
+		  ],
+		  [
+		    'short_url' => 'Building APIs in PHP Using the Slim Micro Framework',
+		    'topic_ids' => [17, 31,],
+		  ],
+		  [
+		    'short_url' => 'Building RESTful Web APIs with Node.js and Express',
+		    'topic_ids' => [17, 8,],
+		  ],
+		  [
+		    'short_url' => 'CSS Shorts Weekly-dec-10',
+		    'topic_ids' => [17, 2,],
+		  ],
+		  [
+		    'short_url' => 'Consuming RESTful APIs in PHP with Guzzle',
+		    'topic_ids' => [17, 4,],
+		  ],
+		  [
+		    'short_url' => 'Databases for Node.js Developers',
+		    'topic_ids' => [17, 8],
+		  ],
+		  [
+		    'short_url' => 'Deploying Docker to AWS',
+		    'topic_ids' => [17, 23,],
+		  ],
+		  [
+		    'short_url' => 'Django_ 2 Building a Social Website',
+		    'topic_ids' => [17, 6, 24,],
+		  ],
+		  [
+		    'short_url' => 'Django_ 3 Building an Online Shop',
+		    'topic_ids' => [17, 6, 24,],
+		  ],
+		  [
+		    'short_url' => 'Django_ 4 Building an Elearning Platform',
+		    'topic_ids' => [17, 6, 24,],
+		  ],
+		  [
+		    'short_url' => 'GraphQL_ Data Fetching with Relay',
+		    'topic_ids' => [17, 8,],
+		  ],
+		  [
+		    'short_url' => 'Laravel 5 Essential Training_ 1 The Basics',
+		    'topic_ids' => [17, 15,],
+		  ],
+		  [
+		    'short_url' => 'Learning Apollo',
+		    'topic_ids' => [17, 8,],
+		  ],
+		  [
+		    'short_url' => 'Learning CakePHP 3',
+		    'topic_ids' => [17, 31,],
+		  ],
+		  [
+		    'short_url' => 'Learning CodeIgniter 3',
+		    'topic_ids' => [17, 31,],
+		  ],
+		  [
+		    'short_url' => 'Learning Docker',
+		    'topic_ids' => [17, 23,],
+		  ],
+		  [
+		    'short_url' => 'Learning Symfony 3',
+		    'topic_ids' => [17, 31],
+		  ],
+		  [
+		    'short_url' => 'Magento Community Edition 2 Essential Training',
+		    'topic_ids' => [17, 32,],
+		  ],
+		  [
+		    'short_url' => 'Node.js_ Build Your First Microservice',
+		    'topic_ids' => [17, 8,],
+		  ],
+		  [
+		    'short_url' => 'Node.js_ Testing and Code Quality',
+		    'topic_ids' => [17, 8,],
+		  ],
+		  [
+		    'short_url' => 'PHP Test-Driven Development with PHPUnit with Justin Yost',
+		    'topic_ids' => [17, 33, 4,],
+		  ],
+		  [
+		    'short_url' => 'React_ Testing and Debugging',
+		    'topic_ids' => [17, 10, 33,],
+		  ],
+		  [
+		    'short_url' => 'WordPress REST API_ Authentication',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'WordPress REST API_ Building an Interactive Web App',
+		    'topic_ids' => [17, 16, ],
+		  ],
+		  [
+		    'short_url' => 'WordPress_ Plugin Development',
+		    'topic_ids' => [17, 16, ],
+		  ],
+		  [
+		    'short_url' => 'learning nodejs',
+		    'topic_ids' => [17, 8,],
+		  ],
+		];
+		$folders_wp =[
+		  [
+		    'short_url' => 'Lynda - WordPress - Developing with Sass and Grunt js',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress Developer Tips Enqueuing Styles and Scripts Tutorial',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress Plugins Analytics',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress Plugins SEO',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress Plugins Social Media Buttons',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress Quick Tips Migration and Database Reset',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress REST API (WP-API) - First Look',
+		    'topic_ids' => [17, 16,],
+		  ],
+		  [
+		    'short_url' => 'Lynda - WordPress and Internationalization',
+		    'topic_ids' => [17, 16,],
+		  ],
+		] ;
+
 
 
     $back = self::generate_single_series($prefix_back, $folders_back); 
     $front = self::generate_single_series($prefix_front, $folders_front); 
     $others = self::generate_single_series($prefix_others, $folders_others); 
+    $paid = self::generate_single_series($prefix_paid, $folders_paid); 
+    $wp = self::generate_single_series($prefix_wp, $folders_wp); 
 
 
 
-		return array_merge($back, $front, $others);
+		return array_merge($back, $front, $others, $paid, $wp);
 	}
 
 
