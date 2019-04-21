@@ -21,7 +21,7 @@
 					</div>
 				</div>
 				<!-- /.d-flex -->
-				@if($series->topics)
+				@if($series->topics && $topic_label)
 					<div class='py-2'>
 						@foreach ($series->topics as $topic)
 							<a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $topic->id]) }}">

@@ -9,6 +9,8 @@
 	@component('series.partials.all_series', ['all_series' => $all_series, 'topic_label' => true ])
 	@endcomponent
 
+	{{$all_series->links()}}
+
 </div>
 
 

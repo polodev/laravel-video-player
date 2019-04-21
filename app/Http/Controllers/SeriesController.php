@@ -17,7 +17,7 @@ class SeriesController extends Controller
      */
     public function index()
     {
-      $all_series = Series::all();
+      $all_series = Series::paginate(15);
       return view('series.index', compact('all_series'));
     }
 

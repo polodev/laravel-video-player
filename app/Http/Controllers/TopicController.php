@@ -53,7 +53,8 @@ class TopicController extends Controller
      */
     public function show(Topic $topic)
     {
-        return view('topic.show', compact('topic'));
+        $paginate_series = $topic->series()->paginate(15);
+        return view('topic.show', compact('topic', 'paginate_series'));
     }
 
     /**
