@@ -7,6 +7,15 @@
 		<a href='{{ route('topic.create') }}' class='btn btn-info'>Create a topic</a>
 	</div>
 
+	<div class='card my-2'>
+		<div class='card-body'>
+	   <form action="{{ route('topic.index') }}" class="my-2">
+	    <input value="{{ isset($tquery) ? $tquery : ''}}" class="form-control" type="search" name="tquery" placeholder="Search topic" aria-label="Search topic">
+	    <button class="btn btn-outline-info mt-2" type="submit">Search topic</button>
+	   </form>
+		</div>
+	</div>
+
 	@foreach ($topics as $topic)
 		<div class='card mb-3'>
 			<div class='card-body'>

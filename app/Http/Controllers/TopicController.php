@@ -14,8 +14,15 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topics = Topic::latest()->paginate(15);
-        return view('topic.index', compact('topics'));
+      $topics = Topic::latest()->paginate(15);
+
+      $tquery      = false;
+      if (request('tquery')) {
+        $tquery = request('tquery');
+        $topics = Topic::where('title', 'LIKE', "%$tquery%")
+        ->latest()->paginate(15);
+      }
+      return view('topic.index', compact('topics', 'tquery'));
     }
 
     /**
@@ -25,7 +32,7 @@ class TopicController extends Controller
      */
     public function create()
     {
-        return view('topic.create');
+      return view('topic.create');
     }
 
     /**
@@ -36,13 +43,13 @@ class TopicController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title' => 'required',
-        ]);
-        Topic::create([
-            'title' => request('title'),
-        ]);
-        return back()->withMessage('Added successfully');
+      $this->validate($request, [
+        'title' => 'required',
+      ]);
+      Topic::create([
+        'title' => request('title'),
+      ]);
+      return back()->withMessage('Added successfully');
     }
 
     /**
@@ -53,8 +60,8 @@ class TopicController extends Controller
      */
     public function show(Topic $topic)
     {
-        $paginate_series = $topic->series()->latest()->paginate(15);
-        return view('topic.show', compact('topic', 'paginate_series'));
+      $paginate_series = $topic->series()->latest()->paginate(15);
+      return view('topic.show', compact('topic', 'paginate_series'));
     }
 
     /**
@@ -88,7 +95,7 @@ class TopicController extends Controller
      */
     public function destroy(Topic $topic)
     {
-        $topic->delete();
-        return back();
+      $topic->delete();
+      return back();
     }
-}
+  }
