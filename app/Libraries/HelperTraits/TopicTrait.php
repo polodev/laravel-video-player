@@ -38,6 +38,9 @@ trait TopicTrait {
 			'codeigniter', //25
 			'c', // 26
 			'editing software', //27
+			'english', // 28
+			'Business', // 29
+			'learning', // 30; 
 
 
 

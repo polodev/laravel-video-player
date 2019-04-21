@@ -13,7 +13,7 @@
 
  */
 
-require 'vendor/autoload.php';
+require __dir__ . "/../../vendor/autoload.php";
 $encoder = new \Riimu\Kit\PHPEncoder\PHPEncoder();
 
 $topic_ids = [17];

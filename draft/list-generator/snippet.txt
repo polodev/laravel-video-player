@@ -1,1 +1,2 @@
 ls > ~/Sites/polodev/draft/list-generator/list.txt
+cd /Users/polodev/Sites/polodev/draft/list-generator
