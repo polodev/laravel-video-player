@@ -30,7 +30,7 @@
 						{{ $video->file_name_without_extension }}
 					</a>
 				</div>
-				<div class="text-info my-1">
+				<div class="text-info my-1 d-none">
 					<a href="{{$video->fullPathWithPrefix}}" target="_blank">Open video directly</a>
 				</div>
 				<div class="my-1">

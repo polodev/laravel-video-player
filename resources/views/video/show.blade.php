@@ -56,7 +56,7 @@
 						{{ $video->file_name_without_extension }}
 					</a>
 				</div>
-				<div class="text-info my-1">
+				<div class="text-info my-1 d-none">
 					<a href="{{ route('render_video', ['video' => $video->id]) }}" target="_blank">Open video directly</a>
 				</div>
 				<div>
