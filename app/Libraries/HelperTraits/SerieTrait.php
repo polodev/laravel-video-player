@@ -22,64 +22,20 @@ trait SerieTrait {
 				'topic_ids' => [21,9,],
 			],
 			[
-				'short_url'    => 'laracasts_code_katas',
-				'topic_ids' => [21, 15, ],
-			],
-			[
 				'short_url'    => 'laracasts_design_patterns_in_php',
 				'topic_ids' => [21, 4, ],
-			],
-			[
-				'short_url'    => 'laracasts_es6',
-				'topic_ids' => [21, 7, ],
-			],
-			[
-				'short_url'    => 'laracasts_forum',
-				'topic_ids' => [21, 15,],
-			],
-			[
-				'short_url'    => 'laracasts_handsoncommunity',
-				'topic_ids' => [21, 15, ],
-			],
-			[
-				'short_url'    => 'laracasts_how_do_i',
-				'topic_ids' => [21],
 			],
 			[
 				'short_url'    => 'laracasts_how_to_read_code',
 				'topic_ids' => [21,],
 			],
 			[
-				'short_url'    => 'laracasts_incomplete_whatcha_working_on',
-				'topic_ids' => [21,],
-			],
-			[
-				'short_url'    => 'laracasts_learn_flexbox_through_examples',
-				'topic_ids' => [21, 2,],
-			],
-			[
-				'short_url'    => 'laracasts_learn_laravel_forge',
-				'topic_ids' => [21, 13, ],
-			],
-			[
-				'short_url'    => 'laracasts_learn_laravel_mix',
-				'topic_ids' => [21, 8,],
-			],
-			[
 				'short_url'    => 'laracasts_lets_build_a_forum_with_laravel',
 				'topic_ids' => [21, 15, ],
 			],
 			[
-				'short_url'    => 'laracasts_modern_css_for_backend_developer',
-				'topic_ids' => [21, 2,],
-			],
-			[
 				'short_url'    => 'laracasts_object_oriented_bootcamp',
 				'topic_ids' => [21, 4,],
-			],
-			[
-				'short_url'    => 'laracasts_professional_php_workflow_in_sublime_text_3',
-				'topic_ids' => [21, 23,],
 			],
 			[
 				'short_url'    => 'laracasts_real_time_laravel_with_socket.io',
@@ -88,22 +44,6 @@ trait SerieTrait {
 			[
 				'short_url'    => 'laracasts_redis',
 				'topic_ids' => [21, 15,],
-			],
-			[
-				'short_url'    => 'laracasts_search_as_service',
-				'topic_ids' => [21, 7, ],
-			],
-			[
-				'short_url'    => 'laracasts_setup_a_mac_dev',
-				'topic_ids' => [21, 23, ],
-			],
-			[
-				'short_url'    => 'laracasts_solid',
-				'topic_ids' => [21, 4,],
-			],
-			[
-				'short_url'    => 'laracasts_sublime_text_mastery',
-				'topic_ids' => [21, 23, ],
 			],
 			[
 				'short_url'    => 'laracasts_testing_jargon',
@@ -122,24 +62,8 @@ trait SerieTrait {
 				'topic_ids' => [21, 4, ],
 			],
 			[
-				'short_url'    => 'laracasts_various',
-				'topic_ids' => [21],
-			],
-			[
-				'short_url'    => 'laracasts_vim_mastery',
-				'topic_ids' => [21, 23, ],
-			],
-			[
 				'short_url'    => 'laracasts_vue2',
 				'topic_ids' => [21, 11,],
-			],
-			[
-				'short_url'    => 'laracasts_way_forge',
-				'topic_ids' => [21, 13, ],
-			],
-			[
-				'short_url'    => 'laracasts_way_laravel_5_7',
-				'topic_ids' => [21, 15,],
 			],
 			[
 				'short_url'    => 'laracasts_way_laravel_authentication',
@@ -166,10 +90,6 @@ trait SerieTrait {
 		$prefix = 'codecourse/';
 		$folders = [
 			[
-				'short_url' => 'Anonymous relationships in Laravel',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
 				'short_url' => 'Build a File Marketplace with Laravel',
 				'topic_ids' => [4, 15, 22,],
 			],
@@ -181,20 +101,9 @@ trait SerieTrait {
 				'short_url' => 'Clean code Laravel-5-18-serial-prob',
 				'topic_ids' => [4, 15, 22,],
 			],
-			[
-				'short_url' => 'Cloud Image Upload with Laravel',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'DRYing up code with Eloquent Model Observers',
-				'topic_ids' => [4, 15, 22,],
-			],
+
 			[
 				'short_url' => 'Drag and drop sorting with Laravel',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'Dropdown Autocomplete Search Anything',
 				'topic_ids' => [4, 15, 22,],
 			],
 			[
@@ -218,14 +127,6 @@ trait SerieTrait {
 				'topic_ids' => [4, 15, 22,],
 			],
 			[
-				'short_url' => 'Laravel on Heroku',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'Laravel real-time private messages',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
 				'short_url' => 'Laravel-multi-tenancy-Multi-database',
 				'topic_ids' => [4, 15, 22,],
 			],
@@ -242,27 +143,11 @@ trait SerieTrait {
 				'topic_ids' => [4, 15, 22,],
 			],
 			[
-				'short_url' => 'Quick and easy avatar uploads',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
 				'short_url' => 'Roles and permissions in Laravel',
 				'topic_ids' => [4, 15, 22,],
 			],
 			[
 				'short_url' => 'Single-page Forum App- API',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'The No Framework Framework',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'The Pagination Builder',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'The Repository Pattern in Laravel',
 				'topic_ids' => [4, 15, 22,],
 			],
 			[
@@ -275,14 +160,6 @@ trait SerieTrait {
 			],
 			[
 				'short_url' => 'Vue-Vuex Single Page App Boilerplate',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'anonymous-relationships-in-laravel',
-				'topic_ids' => [4, 15, 22,],
-			],
-			[
-				'short_url' => 'better-laravel-database-notifications',
 				'topic_ids' => [4, 15, 22,],
 			],
 			[
@@ -358,20 +235,12 @@ trait SerieTrait {
 				'topic_ids' => [17, 14, 5,],
 			],
 			[
-				'short_url' => 'Lynda. Up and Running with PHP CodeIgniter',
-				'topic_ids' => [17, 4, 25,],
-			],
-			[
 				'short_url' => 'Lynda.com - Object-Oriented Programming with PHP',
 				'topic_ids' => [17, 4,],
 			],
 			[
 				'short_url' => 'Lynda.com - PHP with MySQL Essential Training 2013',
 				'topic_ids' => [17, 4, 5, 14],
-			],
-			[
-				'short_url' => 'PHP MVC Framework CodeIgniter',
-				'topic_ids' => [17, 4,],
 			],
 			[
 				'short_url' => 'PHP.with.MySQL.Beyond.the.Basics',
@@ -389,10 +258,6 @@ trait SerieTrait {
 
 		$folders_front = [
       [
-        'short_url' => 'Lynda - Building a Polling App with Socket IO and React.js',
-        'topic_ids' => [17, 8, 10],
-      ],
-      [
         'short_url' => 'Lynda - GIMP Essential Training (Updated Sep 04, 2014) - E_M_A',
         'topic_ids' => [17, 27,],
       ],
@@ -405,20 +270,12 @@ trait SerieTrait {
         'topic_ids' => [17, 10,],
       ],
       [
-        'short_url' => 'Lynda - The DOM in JavaScript, jQuery, AngularJS, and React',
-        'topic_ids' => [17, 3, 9,],
-      ],
-      [
         'short_url' => 'Lynda - jQuery Creating Plugins',
         'topic_ids' => [17, 9,],
       ],
       [
         'short_url' => 'Lynda - javascript_ Enhancing the DOM',
         'topic_ids' => [17, 3,],
-      ],
-      [
-        'short_url' => "Lynda_building_a_website_with_nodejs_express_js",
-        'topic_ids' => [17, 8,],
       ],
       [
         'short_url' => 'Lynda.com - HTML5 Features (7 short courses)',
@@ -534,14 +391,6 @@ trait SerieTrait {
 		    'topic_ids' => [17, 8,],
 		  ],
 		  [
-		    'short_url' => 'Learning CakePHP 3',
-		    'topic_ids' => [17, 31,],
-		  ],
-		  [
-		    'short_url' => 'Learning CodeIgniter 3',
-		    'topic_ids' => [17, 31,],
-		  ],
-		  [
 		    'short_url' => 'Learning Docker',
 		    'topic_ids' => [17, 23,],
 		  ],
@@ -564,10 +413,6 @@ trait SerieTrait {
 		  [
 		    'short_url' => 'PHP Test-Driven Development with PHPUnit with Justin Yost',
 		    'topic_ids' => [17, 33, 4,],
-		  ],
-		  [
-		    'short_url' => 'React_ Testing and Debugging',
-		    'topic_ids' => [17, 10, 33,],
 		  ],
 		  [
 		    'short_url' => 'WordPress REST API_ Authentication',
