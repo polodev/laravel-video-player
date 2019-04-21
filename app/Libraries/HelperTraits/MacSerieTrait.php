@@ -163,7 +163,7 @@ trait MacSerieTrait {
 	}
 
 	public static function code_course_mac() {
-		$prefix = '/Users/polodev/Documents/tuts_video/jeffreyway/';
+		$prefix = '/Users/polodev/Documents/tuts_video/codecourse/';
 		$folders = [
 			[
 				'short_url' => 'Anonymous relationships in Laravel',
