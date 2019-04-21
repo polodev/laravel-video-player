@@ -21,14 +21,17 @@
 					</div>
 				</div>
 				<!-- /.d-flex -->
-{{-- 				@if($series->topic && $topic_label)
-				<div class='py-2'>
-					<a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $series->topic->id]) }}">
-						{{$series->topic->title}}
-					</a>
-				</div>
+				@if($series->topics)
+					<div class='py-2'>
+						@foreach ($series->topics as $topic)
+							<a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $topic->id]) }}">
+								{{$topic->title}}
+							</a>
+						@endforeach
+					</div>
 				@endif
- --}}				<p> {{$series->url}} </p>
+
+				<p> {{$series->url}} </p>
 			</div>
 		</div>
 	@endforeach
