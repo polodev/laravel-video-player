@@ -109,10 +109,14 @@ class SeriesController extends Controller
       ]);
       $series->title = request('title');
       $series->url = request('url');
-      if (request('topic')) {
-        $series->topic_id = request('topic');
-      }
       $series->save();
+      
+      $series->topics()->detach();
+      if (request('topic')) {
+        $topic_ids = request('topic');
+        $series->topics()->attach($topic_ids);
+      }
+
       return back()->withMessage('Updated  successfully');
     }
 

@@ -10,9 +10,9 @@
 		@method('PUT')
 		<div class='form-group'>
 			<label for="topic">Topic</label>
-			<select name="topic" class="form-control" id="topic">
+			<select name="topic[]" class="form-control" id="topic" multiple>
 				@foreach ($topics as $topic)
-					<option {{$topic->id == $series->topic_id ? 'selected' : ''}} value="{{$topic->id}}">{{$topic->title}}</option>
+					<option {{ $series->topics->contains($topic->id)  ? 'selected' : ''}} value="{{$topic->id}}">{{$topic->title}}</option>
 				@endforeach
 			</select>
 		</div>
@@ -30,7 +30,16 @@
 		</div>
 	</form>
 </div>
-
-
-
 @endsection
+
+
+@push('extra_style')
+<link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
+@endpush
+
+@push('extra_script')
+<script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
+<script>
+	$('#topic').select2();
+</script>
+@endpush
