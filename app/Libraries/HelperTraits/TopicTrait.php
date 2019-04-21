@@ -36,7 +36,8 @@ trait TopicTrait {
 
 			'django', //24
 			'codeigniter', //25
-			'c' // 26
+			'c', // 26
+			'editing software', //27
 
 
 

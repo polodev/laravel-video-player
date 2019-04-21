@@ -1,0 +1,1 @@
+ls > ~/Sites/polodev/draft/list-generator/list.txt

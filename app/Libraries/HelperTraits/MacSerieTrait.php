@@ -326,10 +326,11 @@ trait MacSerieTrait {
 		];
 		return self::generate_single_series($prefix, $folders);
 	}
-
 	public static function lynda_mac() {
-		$prefix = '/Users/polodev/Documents/tuts_video/lyn/back/';
-		$folders = [
+		$prefix_back = '/Users/polodev/Documents/tuts_video/lyn/back/';
+		$prefix_front = '/Users/polodev/Documents/tuts_video/lyn/front/';
+		$prefix_others = '/Users/polodev/Documents/tuts_video/lyn/others/';
+		$folders_back = [
 			[
 				'short_url' => 'Lynda - Design Patterns in PHP',
 				'topic_ids' => [17, 4,],
@@ -383,7 +384,101 @@ trait MacSerieTrait {
 				'topic_ids' => [17, 13,],
 			],
 		];
-		return self::generate_single_series($prefix, $folders);
+
+		$folders_front = [
+      [
+        'short_url' => 'Lynda - Building a Polling App with Socket IO and React.js',
+        'topic_ids' => [17, 8, 10],
+      ],
+      [
+        'short_url' => 'Lynda - GIMP Essential Training (Updated Sep 04, 2014) - E_M_A',
+        'topic_ids' => [17, 27,],
+      ],
+      [
+        'short_url' => 'Lynda - JavaScript Events',
+        'topic_ids' => [17, 3,],
+      ],
+      [
+        'short_url' => 'Lynda - React Native Essential Training',
+        'topic_ids' => [17, 10,],
+      ],
+      [
+        'short_url' => 'Lynda - The DOM in JavaScript, jQuery, AngularJS, and React',
+        'topic_ids' => [17, 3, 9,],
+      ],
+      [
+        'short_url' => 'Lynda - jQuery Creating Plugins',
+        'topic_ids' => [17, 9,],
+      ],
+      [
+        'short_url' => 'Lynda - javascript_ Enhancing the DOM',
+        'topic_ids' => [17, 3,],
+      ],
+      [
+        'short_url' => "Lynda \xe2\x80\x93 Building a Website with Node.js and Express.js",
+        'topic_ids' => [17, 8,],
+      ],
+      [
+        'short_url' => 'Lynda.com - HTML5 Features (7 short courses)',
+        'topic_ids' => [17, 1,],
+      ],
+      [
+        'short_url' => 'Photoshop CC for Web Design with Justin Seeley',
+        'topic_ids' => [17, 27,],
+      ],
+      [
+        'short_url' => 'Up and Running with NoSQL Databases',
+        'topic_ids' => [17, 14,],
+      ],
+    ];
+
+    $folders_others = [
+		  [
+		    'short_url' => 'Grammar Fundamentals',
+		    'topic_ids' => [17, 28],
+		  ],
+		  [
+		    'short_url' => 'Lynda - Amazon Web Services Essential Training (Aug 22, 2014)',
+		    'topic_ids' => [17, 13, 23,],
+		  ],
+		  [
+		    'short_url' => 'Lynda.com - Project Management Essentials',
+		    'topic_ids' => [17, 23,],
+		  ],
+		  [
+		    'short_url' => 'Lynda.com.Camtasia.Studio.8.Essential.Training',
+		    'topic_ids' => [17, 27,],
+		  ],
+		  [
+		    'short_url' => 'Management Fundamentals',
+		    'topic_ids' => [17, 29 ],
+		  ],
+		  [
+		    'short_url' => 'Sales Fundamentals with Jeff Bloomfield',
+		    'topic_ids' => [17, 29,],
+		  ],
+		  [
+		    'short_url' => 'Screencasting Fundamentals',
+		    'topic_ids' => [17, 27,],
+		  ],
+		  [
+		    'short_url' => 'Typing Fundamentals {Ace Merlin}',
+		    'topic_ids' => [17, 23,],
+		  ],
+		  [
+		    'short_url' => 'lynda -  Speed Reading Fundamentals',
+		    'topic_ids' => [17, 30,],
+		  ],
+		];
+
+
+    $back = self::generate_single_series($prefix_back, $folders_back); 
+    $front = self::generate_single_series($prefix_front, $folders_front); 
+    $others = self::generate_single_series($prefix_others, $folders_others); 
+
+
+
+		return array_merge($back, $front, $others);
 	}
 
 
