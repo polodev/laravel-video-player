@@ -14,7 +14,7 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topics = Topic::all();
+        $topics = Topic::latest()->paginate(15);
         return view('topic.index', compact('topics'));
     }
 

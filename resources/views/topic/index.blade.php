@@ -28,6 +28,7 @@
 			</div>
 		</div>
 	@endforeach
+	{{$topics->links()}}
 	@if(!count($topics))
 		<h3 class="text-danger">No topics found</h3>
 	@endif

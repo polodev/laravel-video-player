@@ -18,13 +18,14 @@ class SeriesController extends Controller
     public function index()
     {
       $all_series = Series::latest()->paginate(15);
+      $query      = false;
       if (request('query')) {
         $query = request('query');
         $all_series = Series::where('title', 'LIKE', "%$query%")
-                              ->orWhere('url', 'LIKE', "%$query%" )
+                              // ->orWhere('url', 'LIKE', "%$query%" )
                               ->latest()->paginate(15);
       }
-      return view('series.index', compact('all_series'));
+      return view('series.index', compact('all_series', 'query'));
     }
 
     /**
