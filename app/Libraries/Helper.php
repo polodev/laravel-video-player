@@ -9,9 +9,13 @@ class Helper {
 	use TopicTrait;
 	use MacSerieTrait;
 	public static function series(){
-		$jeffrey_way  = self::jeffrey_way_mac();
-		$code_course  = self::code_course_mac();
-		return array_merge($jeffrey_way, $code_course);
+		if( config( 'app.machine' )  == 'mac' ) {
+			$jeffrey_way  = self::jeffrey_way_mac();
+			$code_course  = self::code_course_mac();
+			return array_merge($jeffrey_way, $code_course);
+		}
+
+		return [];
 	}
 
 	public static function generate_single_series($prefix, $folders) {

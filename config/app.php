@@ -28,6 +28,19 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Machine name
+    |--------------------------------------------------------------------------
+    | This value determines from where my code will be loaded
+    | Value could be following = mac, yoga, office
+    | 
+    |
+    */
+
+    'machine' => env('MACHINE', 'mac'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
