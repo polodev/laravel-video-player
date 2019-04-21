@@ -30,13 +30,8 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav mr-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
                             <a href='{{ route('series.index') }}' class='nav-link'>Series</a>
@@ -79,6 +74,10 @@
                             </li>
                         @endguest
                     </ul>
+                     <form action="{{ route('series.index') }}" class="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>
