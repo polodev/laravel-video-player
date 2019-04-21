@@ -10,9 +10,10 @@
 		</h2>
 	</div>
 	<!-- /.card-header -->
-	<div class='card-body d-flex justify-content-center ' id="video-player-card">
+	<div class='card-body d-block justify-content-center ' id="video-player-card">
 
-		<div class="d-block">
+
+		<div class="d-flex justify-content-center">
 			<my-video
 				video_source="{{$current_video_link}}"
 				@if($next)
@@ -20,6 +21,10 @@
 				@endif
 			></my-video>
 		</div>
+		<div class='my-2'>
+			You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a> 
+		</div>
+		<!-- /.my-2 -->
 	</div>
 	<!-- /.card-body -->
 </div>
