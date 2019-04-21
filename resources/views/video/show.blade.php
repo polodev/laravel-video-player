@@ -22,7 +22,17 @@
 			></my-video>
 		</div>
 		<div class='my-2'>
-			You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a> 
+			<div>
+				You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a> 
+			</div>
+			<div class="mt-2">
+				@if ($previous)
+					<a class="btn btn-info mx-1" href="{{ route('video.show', ['video' => $previous->id]) }}">Previous video</a>
+				@endif
+				@if ($next)
+					<a class="btn btn-info mx-1" href="{{ route('video.show', ['video' => $next->id]) }}">Next video</a>
+				@endif
+			</div>
 		</div>
 		<!-- /.my-2 -->
 	</div>
