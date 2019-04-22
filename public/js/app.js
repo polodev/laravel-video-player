@@ -2545,7 +2545,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
     setTimeout(function () {
-      _this.setInitialPlayback();
+      _this.setInitialPlayback(); // this.enterFullScreen(); // making problem currently
+
     }, 1000);
   },
   methods: {
@@ -2554,6 +2555,10 @@ __webpack_require__.r(__webpack_exports__);
       var user_speed = localStorage.getItem('user_speed');
       user_speed = user_speed ? user_speed : 2;
       this.player.playbackRate(user_speed);
+    },
+    enterFullScreen: function enterFullScreen() {
+      $('.vjs-play-control').click();
+      $('.vjs-fullscreen-control').click(); // this.player.play();
     }
   },
   beforeDestroy: function beforeDestroy() {

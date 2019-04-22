@@ -44,7 +44,9 @@ import videojs from 'video.js';
 
       setTimeout( () => {
         this.setInitialPlayback();
+        // this.enterFullScreen(); // making problem currently
       }, 1000)
+
 
     },
     methods: {
@@ -53,6 +55,11 @@ import videojs from 'video.js';
         var user_speed = localStorage.getItem('user_speed');
         user_speed = user_speed ? user_speed : 2;
         this.player.playbackRate(user_speed);
+      },
+      enterFullScreen() {
+        $('.vjs-play-control').click();
+        $('.vjs-fullscreen-control').click();
+        // this.player.play();
       }
 
 
