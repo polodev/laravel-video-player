@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="video_wrapper">
     <video class="video-js vjs-default-skin"  ref="videoPlayer"></video>
   </div>
 </template>

@@ -98562,7 +98562,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "video_wrapper" }, [
     _c("video", {
       ref: "videoPlayer",
       staticClass: "video-js vjs-default-skin"
@@ -111318,8 +111318,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/polodev/Sites/polodev/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/polodev/Sites/polodev/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/polo/sites/vp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/polo/sites/vp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
