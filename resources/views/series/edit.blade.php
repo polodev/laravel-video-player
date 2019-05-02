@@ -25,6 +25,16 @@
 			<label for="url">Url</label>
 			<input value="{{old('url', $series->url)}}" type="text" name="url" id="url" class="form-control">
 		</div>
+
+		<div class='form-group'>
+			<label for="hidden">Hidden</label>
+			<select class="form-control" name="hidden" id="hidden">
+				<option {{ old('hidden', $series->hidden) == 0 ? 'selected' : '' }} value="0">false</option>
+				<option {{  old('hidden', $series->hidden) == 1 ? 'selected' : '' }} value="1">true</option>
+			</select>
+		</div>
+
+
 		<div class='form-group'>
 			<button type="submit" class="btn btn-info">Update</button>
 		</div>

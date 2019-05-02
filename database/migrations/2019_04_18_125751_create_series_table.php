@@ -17,6 +17,7 @@ class CreateSeriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('url');
+            $table->boolean('hidden')->default(false);
             $table->timestamps();
         });
     }
