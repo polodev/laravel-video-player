@@ -39,7 +39,7 @@ url: /Users/polodev/Documents/tuts_video/lyn/paid/Advanced WordPress_ Action and
 
 ## todo / or contribution ?
 
-[] adding seeking option for video player
+[x] adding seeking option for video player
 
 
 
