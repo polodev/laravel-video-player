@@ -120,7 +120,7 @@ php artisan serve
 ~~~
 
 
-Once you serving step will be followed 
+Once you serving, step will be followed for a series
 
 * create a topic 
 * create a series add attached to topic 
