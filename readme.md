@@ -10,8 +10,8 @@ Video Player features
 
 --------------------
 
-* you can make a topic for series. (eg topic: `wordpress`, `php`, `entertainment`, `telegu movie`)
-* you can add a series under a topic 
+* You can make a topic for series. (eg topic: `wordpress`, `php`, `entertainment`, `telegu movie`)
+* You can add a series under a topic 
 
 a series have 2 fields. `title` and `url`. `Url` will be absolute path of a media folder. 
 
@@ -24,17 +24,17 @@ url: /Users/polodev/Documents/tuts_video/lyn/paid/Advanced WordPress_ Action and
 
 ~~~
 
-* you can search all series (globally)
+* You can search all series (globally)
 
-* you can search topics (only in topic listing page)
+* You can search topics (only in topic listing page)
 
-* you can keep some series hidden (in edit section) which  listed on `series-hidden` slug ( :) Privacy in mind ). you have to type those slug in address bar manually
+* You can keep some series hidden (in edit section) which  listed on `series-hidden` slug ( :) Privacy in mind ). you have to type those slug in address bar manually
 
-* you can increase video speed which will be stored in local storage. 
+* You can increase video speed which will be stored in local storage. 
 
-* next and previous video link  in series. 
+* Having next and previous video link beneath the video player . 
 
-* next video will automatically loaded
+* Next video will automatically loaded
 
 
 ## todo / or contribution ?
