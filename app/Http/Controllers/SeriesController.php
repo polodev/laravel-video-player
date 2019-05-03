@@ -17,16 +17,26 @@ class SeriesController extends Controller
      */
     public function index()
     {
-      $all_series = Series::latest()->paginate(15);
+      $all_series = Series::where('hidden', 0)->latest()->paginate(15);
       $query      = false;
       if (request('query')) {
         $query = request('query');
         $all_series = Series::where('title', 'LIKE', "%$query%")
                               // ->orWhere('url', 'LIKE', "%$query%" )
+                              ->where('hidden', 0)
                               ->latest()->paginate(15);
       }
       return view('series.index', compact('all_series', 'query'));
     }
+
+    public function index_hidden()
+    {
+      $query = '';
+      $all_series = Series::where('hidden', 1)->latest()->paginate(15);
+      return view('series.index', compact('all_series', 'query'));
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -116,6 +126,7 @@ class SeriesController extends Controller
       ]);
       $series->title = request('title');
       $series->url = request('url');
+      $series->hidden = request('hidden');
       $series->save();
       
       $series->topics()->detach();
