@@ -58,7 +58,8 @@ Backend:
 
 ## How to run this project
 
-Its a laravel project. So you need composer as your dependency manager. can be download composer from [official website)(https://getcomposer.org/)
+Its a laravel project. So you need composer as your dependency manager. can be download composer from
+official website [https://getcomposer.org/](https://getcomposer.org/)
 
 First clone project from github and cd into this project inside terminal
 
