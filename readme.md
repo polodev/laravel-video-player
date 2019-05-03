@@ -54,7 +54,7 @@ frontend:
 
 Backend:
 
-* Laravel 5.5
+* Laravel 5.8
 
 ## How to run this project
 
