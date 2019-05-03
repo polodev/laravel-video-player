@@ -1,7 +1,10 @@
 ## Personal Video Player 
 
-This project build with laravel and vuejs for personal use. I find its very helpful who try to be organize 
+Personal video player in your localhost (for developer people). You definitely will leave vlc, kmp, wmp forever...
+
+This project build with laravel, vuejs & videojs for personal use. I find its very helpful who try to be organize 
 his/her media. 
+
 
 Video Player features 
 
@@ -25,10 +28,16 @@ url: /Users/polodev/Documents/tuts_video/lyn/paid/Advanced WordPress_ Action and
 
 * you can search topics (only in topic listing page)
 
-* you can keep some series hidden which  listed on `series-hidden` slug ( :) Negativity in mind ). you have to type those slug in address bar manually
+* you can keep some series hidden (in edit section) which  listed on `series-hidden` slug ( :) Privacy in mind ). you have to type those slug in address bar manually
+
+* you can increase video speed which will be stored in local storage. 
+
+* next and previous video link  in series. 
+
+* next video will automatically loaded
 
 
-## todo 
+## todo / or contribution ?
 
 [] adding seeking option for video player
 
@@ -108,6 +117,16 @@ basic php server  using `artisan`
 ~~~bash
 php artisan serve
 ~~~
+
+
+Once you serving step will be followed 
+
+* create a topic 
+* create a series add attached to topic 
+* go to that topic and generate videos
+* start watching 
+
+Beware, I have only used in linux machine. 
 
 
 
