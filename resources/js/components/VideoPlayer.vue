@@ -47,21 +47,46 @@ import videojs from 'video.js';
         // this.enterFullScreen(); // making problem currently
       }, 1000)
 
+      $(document).keydown( (e) => {
+        if (event.keyCode == 37) {
+          console.log('backward key')
+          this.rewind();
+        } else if (event.keyCode == 39) {
+          console.log('forward key')
+          this.forward();
+        }
+      });
+
 
     },
     methods: {
       setInitialPlayback() {
         console.log('calling set playback after 1000');
         var user_speed = localStorage.getItem('user_speed');
-        user_speed = user_speed ? user_speed : 2;
+        user_speed = user_speed ? user_speed : 1.5;
         this.player.playbackRate(user_speed);
       },
       enterFullScreen() {
         $('.vjs-play-control').click();
         $('.vjs-fullscreen-control').click();
         // this.player.play();
-      }
+      },
+      seek(secs) {
+        let time = this.player.currentTime() + secs;
+        if (time < 0) {
+          time = 0;
+        }
 
+        this.player.currentTime(time);
+      },
+
+      forward() {
+        this.seek(10);
+      },
+
+      rewind() {
+        this.seek(-10);
+      },
 
     },
     beforeDestroy() {

@@ -2548,17 +2548,43 @@ __webpack_require__.r(__webpack_exports__);
       _this.setInitialPlayback(); // this.enterFullScreen(); // making problem currently
 
     }, 1000);
+    $(document).keydown(function (e) {
+      if (event.keyCode == 37) {
+        console.log('backward key');
+
+        _this.rewind();
+      } else if (event.keyCode == 39) {
+        console.log('forward key');
+
+        _this.forward();
+      }
+    });
   },
   methods: {
     setInitialPlayback: function setInitialPlayback() {
       console.log('calling set playback after 1000');
       var user_speed = localStorage.getItem('user_speed');
-      user_speed = user_speed ? user_speed : 2;
+      user_speed = user_speed ? user_speed : 1.5;
       this.player.playbackRate(user_speed);
     },
     enterFullScreen: function enterFullScreen() {
       $('.vjs-play-control').click();
       $('.vjs-fullscreen-control').click(); // this.player.play();
+    },
+    seek: function seek(secs) {
+      var time = this.player.currentTime() + secs;
+
+      if (time < 0) {
+        time = 0;
+      }
+
+      this.player.currentTime(time);
+    },
+    forward: function forward() {
+      this.seek(10);
+    },
+    rewind: function rewind() {
+      this.seek(-10);
     }
   },
   beforeDestroy: function beforeDestroy() {
@@ -111323,8 +111349,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/polo/sites/vp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/polo/sites/vp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/polodev/Sites/vp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/polodev/Sites/vp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
