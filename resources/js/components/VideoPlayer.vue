@@ -6,6 +6,7 @@
 
 <script>
 import 'video.js/dist/video-js.css'
+import "videojs-hotkeys/videojs.hotkeys.min.js"
 import videojs from 'video.js';
   export default {
     name: "VideoPlayer",
@@ -28,6 +29,11 @@ import videojs from 'video.js';
     mounted() {
       this.player = videojs(this.$refs.videoPlayer, this.options, function onPlayerReady() {
         console.log('onPlayerReady', this);
+        this.hotkeys({
+          volumeStep: 0.1,
+          seekStep: 5,
+          enableModifiersForNumbers: false
+        });
       })
 
       this.player.on('ratechange', function () {
@@ -47,15 +53,18 @@ import videojs from 'video.js';
         // this.enterFullScreen(); // making problem currently
       }, 1000)
 
-      $(document).keydown( (e) => {
-        if (event.keyCode == 37) {
-          console.log('backward key')
-          this.rewind();
-        } else if (event.keyCode == 39) {
-          console.log('forward key')
-          this.forward();
-        }
-      });
+      // $(document).keydown( (e) => {
+      //   if (event.keyCode == 37) {
+      //     console.log('backward key')
+      //     this.rewind();
+      //   } else if (event.keyCode == 39) {
+      //     console.log('forward key')
+      //     this.forward();
+      //   }
+      //   if (event.keyCode == 32) {
+      //     console.log('this is enter key');
+      //   }
+      // });
 
 
     },
@@ -66,27 +75,27 @@ import videojs from 'video.js';
         user_speed = user_speed ? user_speed : 1.5;
         this.player.playbackRate(user_speed);
       },
-      enterFullScreen() {
-        $('.vjs-play-control').click();
-        $('.vjs-fullscreen-control').click();
-        // this.player.play();
-      },
-      seek(secs) {
-        let time = this.player.currentTime() + secs;
-        if (time < 0) {
-          time = 0;
-        }
+      // enterFullScreen() {
+      //   $('.vjs-play-control').click();
+      //   $('.vjs-fullscreen-control').click();
+      //   // this.player.play();
+      // },
+      // seek(secs) {
+      //   let time = this.player.currentTime() + secs;
+      //   if (time < 0) {
+      //     time = 0;
+      //   }
 
-        this.player.currentTime(time);
-      },
+      //   this.player.currentTime(time);
+      // },
 
-      forward() {
-        this.seek(10);
-      },
+      // forward() {
+      //   this.seek(10);
+      // },
 
-      rewind() {
-        this.seek(-10);
-      },
+      // rewind() {
+      //   this.seek(-10);
+      // },
 
     },
     beforeDestroy() {

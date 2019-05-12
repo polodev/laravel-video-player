@@ -2501,13 +2501,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var video_js_dist_video_js_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! video.js/dist/video-js.css */ "./node_modules/video.js/dist/video-js.css");
 /* harmony import */ var video_js_dist_video_js_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(video_js_dist_video_js_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var video_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! video.js */ "./node_modules/video.js/dist/video.es.js");
+/* harmony import */ var videojs_hotkeys_videojs_hotkeys_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! videojs-hotkeys/videojs.hotkeys.min.js */ "./node_modules/videojs-hotkeys/videojs.hotkeys.min.js");
+/* harmony import */ var videojs_hotkeys_videojs_hotkeys_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(videojs_hotkeys_videojs_hotkeys_min_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var video_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! video.js */ "./node_modules/video.js/dist/video.es.js");
 //
 //
 //
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2531,8 +2534,13 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    this.player = Object(video_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this.$refs.videoPlayer, this.options, function onPlayerReady() {
+    this.player = Object(video_js__WEBPACK_IMPORTED_MODULE_2__["default"])(this.$refs.videoPlayer, this.options, function onPlayerReady() {
       console.log('onPlayerReady', this);
+      this.hotkeys({
+        volumeStep: 0.1,
+        seekStep: 5,
+        enableModifiersForNumbers: false
+      });
     });
     this.player.on('ratechange', function () {
       localStorage.setItem('user_speed', this.playbackRate());
@@ -2547,18 +2555,18 @@ __webpack_require__.r(__webpack_exports__);
     setTimeout(function () {
       _this.setInitialPlayback(); // this.enterFullScreen(); // making problem currently
 
-    }, 1000);
-    $(document).keydown(function (e) {
-      if (event.keyCode == 37) {
-        console.log('backward key');
-
-        _this.rewind();
-      } else if (event.keyCode == 39) {
-        console.log('forward key');
-
-        _this.forward();
-      }
-    });
+    }, 1000); // $(document).keydown( (e) => {
+    //   if (event.keyCode == 37) {
+    //     console.log('backward key')
+    //     this.rewind();
+    //   } else if (event.keyCode == 39) {
+    //     console.log('forward key')
+    //     this.forward();
+    //   }
+    //   if (event.keyCode == 32) {
+    //     console.log('this is enter key');
+    //   }
+    // });
   },
   methods: {
     setInitialPlayback: function setInitialPlayback() {
@@ -2566,25 +2574,6 @@ __webpack_require__.r(__webpack_exports__);
       var user_speed = localStorage.getItem('user_speed');
       user_speed = user_speed ? user_speed : 1.5;
       this.player.playbackRate(user_speed);
-    },
-    enterFullScreen: function enterFullScreen() {
-      $('.vjs-play-control').click();
-      $('.vjs-fullscreen-control').click(); // this.player.play();
-    },
-    seek: function seek(secs) {
-      var time = this.player.currentTime() + secs;
-
-      if (time < 0) {
-        time = 0;
-      }
-
-      this.player.currentTime(time);
-    },
-    forward: function forward() {
-      this.seek(10);
-    },
-    rewind: function rewind() {
-      this.seek(-10);
     }
   },
   beforeDestroy: function beforeDestroy() {
@@ -96679,6 +96668,19 @@ Stream.prototype.flush = function(flushSource) {
 
 module.exports = Stream;
 
+
+/***/ }),
+
+/***/ "./node_modules/videojs-hotkeys/videojs.hotkeys.min.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/videojs-hotkeys/videojs.hotkeys.min.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* videojs-hotkeys v0.2.25 - https://github.com/ctd1500/videojs-hotkeys */
+!function(e,n){"undefined"!=typeof window&&window.videojs?n(window.videojs): true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! video.js */ "./node_modules/video.js/dist/video.es.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(e){return n(e.default||e)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined}(0,function(e){"use strict";"undefined"!=typeof window&&(window.videojs_hotkeys={version:"0.2.25"});(e.registerPlugin||e.plugin)("hotkeys",function(n){function t(e){return"function"==typeof s?s(e):s}function r(e){null!=e&&"function"==typeof e.then&&e.then(null,function(e){})}var o=this,u=o.el(),l=document,i={volumeStep:.1,seekStep:5,enableMute:!0,enableVolumeScroll:!0,enableHoverScroll:!1,enableFullscreen:!0,enableNumbers:!0,enableJogStyle:!1,alwaysCaptureHotkeys:!1,enableModifiersForNumbers:!0,enableInactiveFocus:!0,skipInitialFocus:!1,playPauseKey:function(e){return 32===e.which||179===e.which},rewindKey:function(e){return 37===e.which||177===e.which},forwardKey:function(e){return 39===e.which||176===e.which},volumeUpKey:function(e){return 38===e.which},volumeDownKey:function(e){return 40===e.which},muteKey:function(e){return 77===e.which},fullscreenKey:function(e){return 70===e.which},customKeys:{}},c=e.mergeOptions||e.util.mergeOptions,a=(n=c(i,n||{})).volumeStep,s=n.seekStep,m=n.enableMute,f=n.enableVolumeScroll,y=n.enableHoverScroll,v=n.enableFullscreen,d=n.enableNumbers,p=n.enableJogStyle,b=n.alwaysCaptureHotkeys,h=n.enableModifiersForNumbers,w=n.enableInactiveFocus,k=n.skipInitialFocus,S=e.VERSION;u.hasAttribute("tabIndex")||u.setAttribute("tabIndex","-1"),u.style.outline="none",!b&&o.autoplay()||k||o.one("play",function(){u.focus()}),w&&o.on("userinactive",function(){var e=function(){clearTimeout(n)},n=setTimeout(function(){o.off("useractive",e);var n=l.activeElement,t=u.querySelector(".vjs-control-bar");n&&n.parentElement==t&&u.focus()},10);o.one("useractive",e)}),o.on("play",function(){var e=u.querySelector(".iframeblocker");e&&""===e.style.display&&(e.style.display="block",e.style.bottom="39px")});var K=!1,q=u.querySelector(".vjs-volume-menu-button")||u.querySelector(".vjs-volume-panel");null!=q&&(q.onmouseover=function(){K=!0},q.onmouseout=function(){K=!1});var j=function(e){if(y)n=0;else var n=l.activeElement;if(o.controls()&&(b||n==u||n==u.querySelector(".vjs-tech")||n==u.querySelector(".iframeblocker")||n==u.querySelector(".vjs-control-bar")||K)&&f){e=window.event||e;var t=Math.max(-1,Math.min(1,e.wheelDelta||-e.detail));e.preventDefault(),1==t?o.volume(o.volume()+a):-1==t&&o.volume(o.volume()-a)}},F=function(e,t){return n.playPauseKey(e,t)?1:n.rewindKey(e,t)?2:n.forwardKey(e,t)?3:n.volumeUpKey(e,t)?4:n.volumeDownKey(e,t)?5:n.muteKey(e,t)?6:n.fullscreenKey(e,t)?7:void 0};return o.on("keydown",function(e){var i,c,s=e.which,f=e.preventDefault,y=o.duration();if(o.controls()){var w=l.activeElement;if(b||w==u||w==u.querySelector(".vjs-tech")||w==u.querySelector(".vjs-control-bar")||w==u.querySelector(".iframeblocker"))switch(F(e,o)){case 1:f(),b&&e.stopPropagation(),o.paused()?r(o.play()):o.pause();break;case 2:i=!o.paused(),f(),i&&o.pause(),(c=o.currentTime()-t(e))<=0&&(c=0),o.currentTime(c),i&&r(o.play());break;case 3:i=!o.paused(),f(),i&&o.pause(),(c=o.currentTime()+t(e))>=y&&(c=i?y-.001:y),o.currentTime(c),i&&r(o.play());break;case 5:f(),p?(c=o.currentTime()-1,o.currentTime()<=1&&(c=0),o.currentTime(c)):o.volume(o.volume()-a);break;case 4:f(),p?((c=o.currentTime()+1)>=y&&(c=y),o.currentTime(c)):o.volume(o.volume()+a);break;case 6:m&&o.muted(!o.muted());break;case 7:v&&(o.isFullscreen()?o.exitFullscreen():o.requestFullscreen());break;default:if((s>47&&s<59||s>95&&s<106)&&(h||!(e.metaKey||e.ctrlKey||e.altKey))&&d){var k=48;s>95&&(k=96);var S=s-k;f(),o.currentTime(o.duration()*S*.1)}for(var K in n.customKeys){var q=n.customKeys[K];q&&q.key&&q.handler&&q.key(e)&&(f(),q.handler(o,n,e))}}}}),o.on("dblclick",function(e){if(null!=S&&S<="7.1.0"&&o.controls()){var n=e.relatedTarget||e.toElement||l.activeElement;n!=u&&n!=u.querySelector(".vjs-tech")&&n!=u.querySelector(".iframeblocker")||v&&(o.isFullscreen()?o.exitFullscreen():o.requestFullscreen())}}),o.on("mousewheel",j),o.on("DOMMouseScroll",j),this})});
 
 /***/ }),
 
