@@ -6,7 +6,7 @@
 	<div class='card-header'>
 		<h2>
 			{{ $current_video->file_name_without_extension }}
-			<small>(id: {{$current_video->id}})</small>
+			<small>(Video-no:  {{ $current_video->video_index() + 1 }})</small>
 		</h2>
 	</div>
 	<!-- /.card-header -->
