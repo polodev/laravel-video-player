@@ -22,9 +22,12 @@
 			></my-video>
 		</div>
 		<div class='my-2'>
-			<div>
-				You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a> 
-			</div>
+			<p>
+				You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a>
+			</p>
+      <p>
+        Video path: {{ $current_video->path_name }}
+      </p>
 			<div class="mt-2">
 				@if ($previous)
 					<a class="btn btn-info mx-1" href="{{ route('video.show', ['video' => $previous->id]) }}">Previous video</a>
@@ -48,7 +51,6 @@
 			<div class='card-body'>
 				<div class='mb'>
 					Video No: {{ $video->video_index() + 1 }}  <br>
-					Video Id: {{ $video->id }}
 				</div>
 
 				<div class="my-1">
@@ -60,13 +62,13 @@
 					<a href="{{ route('render_video', ['video' => $video->id]) }}" target="_blank">Open video directly</a>
 				</div>
 				<div>
-					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small> 
+					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small>
 					<br>
 					<small> Status: {{ $video->completed ? "Completed" : 'Not Completed' }} </small>
 				</div>
 			</div>
 		</div>
 @endforeach
-	
+
 </div>
 @endsection

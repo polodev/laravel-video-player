@@ -4,16 +4,23 @@
 <h2>
 	SERIES:: {{ $series->title }}
 </h2>
-<h3>
-	<form method="post" action="{{ route('series.generate_videos', ['series' => $series->id]) }}">
-		@csrf
-		<button type="submit" class='btn btn-info'>
-			Generate / Regenerate Videos
-		</button>
-	</form>
-</h3>
-<p>
-	{{ $series->url }}
+
+<div class="my-3">
+  <form class="d-inline-block" method="post" action="{{ route('series.generate_videos', ['series' => $series->id]) }}">
+    @csrf
+    <button type="submit" class='btn btn-info'>
+      Generate / Regenerate Videos
+    </button>
+  </form>
+  <form class="d-inline-block" method="post" action="{{ route('series.delete_videos', ['series' => $series->id]) }}">
+    @csrf
+    <button type="submit" class='btn btn-danger'>
+      Remove videos
+    </button>
+  </form>
+</div>
+<p class="my-3">
+	Path: {{ $series->url }}
 </p>
 
 <div class='all-videos'>
@@ -22,7 +29,6 @@
 			<div class='card-body'>
 				<div class='my-1'>
 					Video No: {{ $video->video_index() + 1 }}  <br/>
-					Video Id: {{ $video->id }} 
 				</div>
 
 				<div class="my-1">
@@ -34,7 +40,7 @@
 					<a href="{{$video->fullPathWithPrefix}}" target="_blank">Open video directly</a>
 				</div>
 				<div class="my-1">
-					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small> 
+					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small>
 					<br>
 					<small> Status: {{ $video->completed ? "Completed" : 'Not Completed' }} </small>
 				</div>

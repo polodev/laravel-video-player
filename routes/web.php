@@ -21,6 +21,7 @@ Route::get('/render-video/{video}', 'VideoController@render_video')->name('rende
 Route::resource('/series', 'SeriesController');
 Route::get('/series-hidden', 'SeriesController@index_hidden');
 Route::post('/series_video_generate/{series}', 'SeriesController@generate_videos')->name('series.generate_videos');
+Route::post('/series_video_delete/{series}', 'SeriesController@delete_videos')->name('series.delete_videos');
 Route::resource('/topic', 'TopicController');
 
 Auth::routes();

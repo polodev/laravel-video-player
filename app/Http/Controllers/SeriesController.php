@@ -128,7 +128,7 @@ class SeriesController extends Controller
       $series->url = request('url');
       $series->hidden = request('hidden');
       $series->save();
-      
+
       $series->topics()->detach();
       if (request('topic')) {
         $topic_ids = request('topic');
@@ -190,7 +190,7 @@ class SeriesController extends Controller
 
     public function generate_videos(Series $series)
     {
-        // delete all 
+        // delete all
       Video::where('series_id', $series->id)->delete();
         // now add all
       $video_table_args = $this->generate_video_args($series);
@@ -199,5 +199,9 @@ class SeriesController extends Controller
       }
       Video::insert($video_table_args);
       return back()->withMessage('Generate Videos Successfully');
+    }
+    public function delete_videos(Series $series) {
+      Video::where('series_id', $series->id)->delete();
+      return back()->withMessage('Remove videos successfully');
     }
   }
