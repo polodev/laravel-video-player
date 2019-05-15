@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Libraries;
 
@@ -17,10 +17,10 @@ class Helper {
 	}
 
 	public static function generate_single_series($prefix, $folders) {
-		$tuts_folder = '/Users/polodev/Documents/tuts_video/';
-		if( config( 'app.machine' )  == 'yoga' ) {
-			$tuts_folder = '/home/polo/tuts/';
-		}
+    $tuts_folder = '';
+    if (config('app.tuts_folder')) {
+      $tuts_folder = config('app.tuts_folder');
+    }
 		$series = array_map(function ($folder) use($prefix, $tuts_folder) {
 			return [
 				'title'    => $folder['short_url'],

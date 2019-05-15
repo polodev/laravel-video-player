@@ -35,11 +35,12 @@ return [
     |--------------------------------------------------------------------------
     | This value determines from where my code will be loaded
     | Value could be following = mac, yoga, office
-    | 
+    |
     |
     */
 
     'machine' => env('MACHINE', 'mac'),
+    'tuts_folder' => env('TUTS_FOLDER', '/'),
 
     /*
     |--------------------------------------------------------------------------
