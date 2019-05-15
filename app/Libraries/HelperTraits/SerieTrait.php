@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Libraries\HelperTraits;
 
@@ -25,6 +25,10 @@ trait SerieTrait {
 				'short_url'    => 'laracasts_design_patterns_in_php',
 				'topic_ids' => [21, 4, ],
 			],
+      [
+        'short_url'    => 'laracasts_code_katas',
+        'topic_ids' => [21, 4, ],
+      ],
 			[
 				'short_url'    => 'laracasts_how_to_read_code',
 				'topic_ids' => [21,],
@@ -101,6 +105,10 @@ trait SerieTrait {
 				'short_url' => 'Clean code Laravel-5-18-serial-prob',
 				'topic_ids' => [4, 15, 22,],
 			],
+      [
+        'short_url' => 'code_course_laravel_nuxt_cart',
+        'topic_ids' => [4, 15, 22,],
+      ],
 
 			[
 				'short_url' => 'Drag and drop sorting with Laravel',
@@ -118,6 +126,43 @@ trait SerieTrait {
 				'short_url' => 'Flexible Social Authentication with Laravel',
 				'topic_ids' => [4, 15, 22,],
 			],
+      [
+        'short_url' => 'filtering-in-laravel',
+        'topic_ids' => [4, 15, 22,],
+      ],
+      [
+        'short_url' => 'filtering-in-laravel-blade',
+        'topic_ids' => [4, 15, 22,],
+      ],
+      [
+        'short_url' => 'filtering-in-laravel-vue-js',
+        'topic_ids' => [4, 15, 22,],
+      ],
+
+
+
+      [
+        'short_url' => 'Laravel-multi-tenancy-Multi-database',
+        'topic_ids' => [4, 15, 22,],
+      ],
+      [
+        'short_url' => 'laravel-single-database-multi-tenancy',
+        'topic_ids' => [4, 15, 22,],
+      ],
+      [
+        'short_url' => 'nuxt-js-laravel-authentication',
+        'topic_ids' => [4, 15, 22,],
+      ],
+      [
+        'short_url' => 'The No Framework Framework',
+        'topic_ids' => [4, 15, 22,],
+      ],
+      [
+        'short_url' => 'Unit testing with PHPUnit',
+        'topic_ids' => [4, 15, 22,],
+      ],
+
+
 			[
 				'short_url' => 'Laravel Chatroom',
 				'topic_ids' => [4, 15, 22,],
@@ -468,11 +513,11 @@ trait SerieTrait {
 
 
 
-    $back = self::generate_single_series($prefix_back, $folders_back); 
-    $front = self::generate_single_series($prefix_front, $folders_front); 
-    $others = self::generate_single_series($prefix_others, $folders_others); 
-    $paid = self::generate_single_series($prefix_paid, $folders_paid); 
-    $wp = self::generate_single_series($prefix_wp, $folders_wp); 
+    $back = self::generate_single_series($prefix_back, $folders_back);
+    $front = self::generate_single_series($prefix_front, $folders_front);
+    $others = self::generate_single_series($prefix_others, $folders_others);
+    $paid = self::generate_single_series($prefix_paid, $folders_paid);
+    $wp = self::generate_single_series($prefix_wp, $folders_wp);
 
 
 
