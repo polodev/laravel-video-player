@@ -17,12 +17,18 @@ class Helper {
   use CodeCourseTrait;
   use OtherssTrait;
 	public static function series(){
-		$jeffrey_way  = self::jeffrey_way();
+		$jeffrey_way  = #
 		$code_course  = self::code_course();
 		$lynda        = self::lynda();
 		$udemy        = self::udemy();
     $others        = self::others();
-		return array_merge($jeffrey_way, $code_course, $lynda, $udemy);
+		return array_merge(
+      self::jeffrey_way(),
+      self::lynda(),
+      self::udemy(),
+      self::code_course(),
+      self::others()
+    );
 	}
 
 	public static function generate_single_series_original($prefix, $folders) {

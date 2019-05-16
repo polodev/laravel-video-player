@@ -30,7 +30,6 @@ trait LyndaTrait {
       [ 'Learning Apollo', [17, ] ],
       [ 'Learning Full-Stack javascript Development_ MongoDB, Node and React', [17, ] ],
       [ 'learning nodejs', [17, ] ],
-      [ 'list.txt', [17, ] ],
       [ 'Lynda – Building a Website with Node.js and Express.js', [17, ] ],
       [ 'Lynda - Building Complex Express Sites with Redis and Socket.IO', [17, ] ],
       [ 'Lynda - Learning Redux', [17, ] ],
@@ -54,7 +53,6 @@ trait LyndaTrait {
       [ 'Learning CakePHP 3', [17,] ],
       [ 'Learning CodeIgniter 3', [17,] ],
       [ 'Learning Symfony 3', [17,] ],
-      [ 'list.js', [17,] ],
       [ 'Lynda.com - Object-Oriented Programming with PHP', [17,] ],
       [ 'Lynda.com - PHP with MySQL Essential Training 2013', [17,] ],
       [ 'Lynda - Design Patterns in PHP', [17,] ],
@@ -74,7 +72,6 @@ trait LyndaTrait {
     $prefix = 'lynda/lynda-frontend/';
     $folders = [
       [ 'CSS Shorts Weekly-dec-10', [17,] ],
-      [ 'list.js', [17,] ],
       [ 'Lynda.com - HTML5 Features (7 short courses)', [17,] ],
       [ 'Lynda - CSS_Animation', [17,] ],
       [ 'Lynda - Learning SVG', [17,] ],
@@ -87,7 +84,6 @@ trait LyndaTrait {
     $prefix = 'lynda/lynda-others/';
     $folders = [
       [ 'Grammar Fundamentals', [17,] ],
-      [ 'list.js', [17,] ],
       [ 'Lynda.com - Project Management Essentials', [17,] ],
       [ 'Lynda - GIMP Essential Training (Updated Sep 04, 2014) - E_M_A', [17,] ],
       [ 'Lynda - Improving Your Memory', [17,] ],
@@ -105,7 +101,6 @@ trait LyndaTrait {
     $prefix = 'lynda/lynda-wordpress/';
     $folders = [
       [ 'Advanced WordPress_ Action and Filter Hooks', [17,] ],
-      [ 'list.js', [17,] ],
       [ 'Lynda - WordPress and Internationalization', [17,] ],
       [ 'Lynda - WordPress Plugin Development', [17,] ],
       [ 'Lynda - WordPress Quick Tips Migration and Database Reset', [17,] ],

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Libraries\HelperTraits;
 
@@ -18,13 +18,13 @@ trait TopicTrait {
 			'react', // 10
 			'vue', // 11
 
-			'linux', //12 
-			'server', //13 
-			'database', //14 
+			'linux', //12
+			'server', //13
+			'database', //14
 
 
-			'laravel', //15 
-			'wordpress', //16 
+			'laravel', //15
+			'wordpress', //16
 
 			'lynda', //17
 			'tutsplus', // 18
@@ -40,10 +40,12 @@ trait TopicTrait {
 			'editing software', //27
 			'english', // 28
 			'Business', // 29
-			'learning', // 30; 
-			'php framework', // 31; 
-			'magento', // 32; 
+			'learning', // 30;
+			'php framework', // 31;
+			'magento', // 32;
 			'testing', // 33
+      'Others tutorial', // 34
+      'Others', // 35
 
 
 
