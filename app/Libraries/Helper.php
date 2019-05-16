@@ -5,6 +5,7 @@ namespace App\Libraries;
 use App\Libraries\HelperTraits\CodeCourseTrait;
 use App\Libraries\HelperTraits\JeffreyWayTrait;
 use App\Libraries\HelperTraits\LyndaTrait;
+use App\Libraries\HelperTraits\ManualTrait;
 use App\Libraries\HelperTraits\OtherVendorsTrait;
 use App\Libraries\HelperTraits\OthersTrait;
 use App\Libraries\HelperTraits\TopicTrait;
@@ -18,6 +19,7 @@ class Helper {
   use CodeCourseTrait;
   use OthersTrait;
   use OtherVendorsTrait;
+  use ManualTrait;
 	public static function series(){
 		return array_merge(
       self::jeffrey_way(),
@@ -26,6 +28,7 @@ class Helper {
       self::code_course(),
       self::others(),
       self::other_vendors(),
+      self::manual_one_by_one(),
     );
 	}
 
