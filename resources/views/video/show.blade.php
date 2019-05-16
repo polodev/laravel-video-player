@@ -25,9 +25,8 @@
 			<p>
 				You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a>
 			</p>
-      <p>
-        Video path: {{ $current_video->path_name }}
-      </p>
+      <p> Video path:</p>
+      <p>{{ $current_video->path_name }}</p>
 			<div class="mt-2">
 				@if ($previous)
 					<a class="btn btn-info mx-1" href="{{ route('video.show', ['video' => $previous->id]) }}">Previous video</a>
