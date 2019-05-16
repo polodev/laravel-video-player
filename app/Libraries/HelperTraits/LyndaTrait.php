@@ -17,6 +17,8 @@ trait LyndaTrait {
       ['Lynda - Relational Database Fundamentals', [17], ],
       ['Lynda - Up and Running with Python and Django', [17], ],
     ];
+    $folders = self::set_main_id($folders, 17);
+
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_node_js()
@@ -41,6 +43,7 @@ trait LyndaTrait {
       [ 'Up and Running with NoSQL Databases', [17, ] ],
 
     ];
+    $folders = self::set_main_id($folders, 17);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_php_mysql()
@@ -65,6 +68,7 @@ trait LyndaTrait {
       [ 'PHP.with.MySQL.Beyond.the.Basics', [17,] ],
 
     ];
+    $folders = self::set_main_id($folders, 17);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_frontend()
@@ -77,6 +81,7 @@ trait LyndaTrait {
       [ 'Lynda - Learning SVG', [17,] ],
       [ 'Lynda - The DOM in JavaScript, jQuery, AngularJS, and React', [17,] ],
     ];
+    $folders = self::set_main_id($folders, 17);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_others()
@@ -94,6 +99,7 @@ trait LyndaTrait {
       [ 'Screencasting Fundamentals', [17,] ],
 
     ];
+    $folders = self::set_main_id($folders, 17);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_wordpress()
@@ -110,6 +116,7 @@ trait LyndaTrait {
       [ 'WordPress REST API_ Building an Interactive Web App', [17,] ],
 
     ];
+    $folders = self::set_main_id($folders, 17);
     return self::generate_single_series($prefix, $folders);
   }
 
