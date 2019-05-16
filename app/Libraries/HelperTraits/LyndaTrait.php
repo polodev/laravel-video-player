@@ -17,7 +17,7 @@ trait LyndaTrait {
       ['Lynda - Relational Database Fundamentals', [17], ],
       ['Lynda - Up and Running with Python and Django', [17], ],
     ];
-    $folders = self::set_main_id($folders, 17);
+    $folders = self::set_main_id($folders, [17,]);
 
     return self::generate_single_series($prefix, $folders);
   }
@@ -25,25 +25,25 @@ trait LyndaTrait {
   {
     $prefix = '/lynda/lynda-node-js/';
     $folders = [
-      [ 'Building RESTful Web APIs with Node.js and Express', [17, ] ],
-      [ 'Databases for Node.js Developers', [17, ] ],
-      [ '[FreeCoursesOnline.Us] Lynda - Databases-Node-js-Developers', [17, ] ],
-      [ 'GraphQL_ Data Fetching with Relay', [17, ] ],
-      [ 'Learning Apollo', [17, ] ],
-      [ 'Learning Full-Stack javascript Development_ MongoDB, Node and React', [17, ] ],
-      [ 'learning nodejs', [17, ] ],
-      [ 'Lynda – Building a Website with Node.js and Express.js', [17, ] ],
-      [ 'Lynda - Building Complex Express Sites with Redis and Socket.IO', [17, ] ],
-      [ 'Lynda - Learning Redux', [17, ] ],
-      [ 'Lynda - React Components Context and Accessibility', [17, ] ],
-      [ 'Lynda - React Recipes', [17, ] ],
-      [ 'Lynda -  Webpack for React Applications', [17, ] ],
-      [ 'Node.js_ Build Your First Microservice', [17, ] ],
-      [ 'Node.js_ Testing and Code Quality', [17, ] ],
-      [ 'Up and Running with NoSQL Databases', [17, ] ],
+      [ 'Building RESTful Web APIs with Node.js and Express', [17, 8,] ],
+      [ 'Databases for Node.js Developers', [17, 8,] ],
+      [ '[FreeCoursesOnline.Us] Lynda - Databases-Node-js-Developers', [17, 8,] ],
+      [ 'GraphQL_ Data Fetching with Relay', [17, 40, 8, ] ],
+      [ 'Learning Apollo', [17, 40, 8,] ],
+      [ 'Learning Full-Stack javascript Development_ MongoDB, Node and React', [17, 8, 10, ] ],
+      [ 'learning nodejs', [17, 8, ] ],
+      [ 'Lynda – Building a Website with Node.js and Express.js', [17, 8,] ],
+      [ 'Lynda - Building Complex Express Sites with Redis and Socket.IO', [17, 8, ] ],
+      [ 'Lynda - Learning Redux', [17, 10, ] ],
+      [ 'Lynda - React Components Context and Accessibility', [17, 10, ] ],
+      [ 'Lynda - React Recipes', [17, 10, ] ],
+      [ 'Lynda -  Webpack for React Applications', [17, 10,] ],
+      [ 'Node.js_ Build Your First Microservice', [17, 8,] ],
+      [ 'Node.js_ Testing and Code Quality', [17, 8, ] ],
+      [ 'Up and Running with NoSQL Databases', [17, 14, 8,] ],
 
     ];
-    $folders = self::set_main_id($folders, 17);
+    $folders = self::set_main_id($folders, [17,]);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_php_mysql()
@@ -68,7 +68,7 @@ trait LyndaTrait {
       [ 'PHP.with.MySQL.Beyond.the.Basics', [17,] ],
 
     ];
-    $folders = self::set_main_id($folders, 17);
+    $folders = self::set_main_id($folders, [17,]);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_frontend()
@@ -81,7 +81,7 @@ trait LyndaTrait {
       [ 'Lynda - Learning SVG', [17,] ],
       [ 'Lynda - The DOM in JavaScript, jQuery, AngularJS, and React', [17,] ],
     ];
-    $folders = self::set_main_id($folders, 17);
+    $folders = self::set_main_id($folders, [17,]);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_others()
@@ -99,7 +99,7 @@ trait LyndaTrait {
       [ 'Screencasting Fundamentals', [17,] ],
 
     ];
-    $folders = self::set_main_id($folders, 17);
+    $folders = self::set_main_id($folders, [17,]);
     return self::generate_single_series($prefix, $folders);
   }
   public static function lynda_wordpress()
@@ -116,7 +116,7 @@ trait LyndaTrait {
       [ 'WordPress REST API_ Building an Interactive Web App', [17,] ],
 
     ];
-    $folders = self::set_main_id($folders, 17);
+    $folders = self::set_main_id($folders, [17,]);
     return self::generate_single_series($prefix, $folders);
   }
 

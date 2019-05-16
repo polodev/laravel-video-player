@@ -32,6 +32,7 @@ trait CodeCourseTrait {
       [ 'Unit testing with PHPUnit', [4, 15, 22,] ],
 
     ];
+    $folders = self::set_main_id($folders, [22]);
     return self::generate_single_series($prefix, $folders);
   }
 }

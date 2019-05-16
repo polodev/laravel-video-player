@@ -46,11 +46,9 @@ class Helper {
 	}
 
   // for appending main id
-  public static function set_main_id($folders, $manual_id) {
-     $return_folders = array_map(function ($folder) use($manual_id) {
-      if ( !in_array($manual_id, $folder[1]) ) {
-        $folder[1][] = $manual_id;
-      }
+  public static function set_main_id($folders, $manual_ids) {
+     $return_folders = array_map(function ($folder) use($manual_ids) {
+      $folder[1] = array_unique( array_merge( $folder[1], $manual_ids ) );
       return $folder;
     }, $folders);
     return $return_folders;

@@ -13,7 +13,7 @@ trait ManualTrait {
 
     ];
 
-    $folders = self::set_main_id($folders, 38);
+    $folders = self::set_main_id($folders, [38]);
     return self::generate_single_series_manual($folders);
   }
   public static function manual() {

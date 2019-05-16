@@ -26,6 +26,7 @@ trait JeffreyWayTrait {
       ['laracasts_webpack_for_everyone', [21, 7, ], ],
       ['laracasts_wordpress_plugin_development_essentials', [21, 16, ], ],
     ];
+    $folders = self::set_main_id($folders, [21]);
     return self::generate_single_series($prefix, $folders);
   }
 }
