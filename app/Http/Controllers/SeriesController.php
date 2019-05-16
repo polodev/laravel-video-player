@@ -21,7 +21,7 @@ class SeriesController extends Controller
       $query      = false;
       if (request('query')) {
         $query = request('query');
-        $all_series = Series::where('title', 'LIKE', "%$query%")
+        $all_series = Series::where('url', 'LIKE', "%$query%")
                               // ->orWhere('url', 'LIKE', "%$query%" )
                               ->where('hidden', 0)
                               ->latest()->paginate(15);
