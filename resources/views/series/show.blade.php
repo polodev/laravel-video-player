@@ -5,6 +5,17 @@
 	SERIES:: {{ $series->title }}
 </h2>
 
+<div class="my-3 d-flex">
+  <a class="btn btn-primary mr-2" href="{{ route('series.edit', ['series' => $series->id]) }}">Edit</a>
+  <form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', ['series' => $series->id]) }}">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+</div>
+
+
+
 <div class="my-3">
   <form class="d-inline-block" method="post" action="{{ route('series.generate_videos', ['series' => $series->id]) }}">
     @csrf

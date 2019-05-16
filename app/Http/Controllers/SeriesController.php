@@ -147,7 +147,7 @@ class SeriesController extends Controller
     public function destroy(Series $series)
     {
       $series->delete();
-      return back();
+      return redirect()->route('series.index');
     }
     public function generate_video_args(Series $series)
     {
