@@ -40,7 +40,7 @@ return [
     */
 
     'machine' => env('MACHINE', 'mac'),
-    'tuts_folder' => env('TUTS_FOLDER', '/'),
+    'tuts_folder' => env('TUTS_FOLDER', ''),
 
     /*
     |--------------------------------------------------------------------------

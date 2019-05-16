@@ -48,6 +48,7 @@ trait TopicTrait {
       'Others', // 35
       'Egghead', // 36
       'Youtube', // 37
+      'Manual', // 38
 
 
 

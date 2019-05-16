@@ -33,10 +33,7 @@ class Helper {
 	}
 
 	public static function generate_single_series_original($prefix, $folders) {
-    $tuts_folder = '';
-    if (config('app.tuts_folder')) {
-      $tuts_folder = config('app.tuts_folder');
-    }
+    $tuts_folder = config('app.tuts_folder');
 		$series = array_map(function ($folder) use($prefix, $tuts_folder) {
       return [
         'title'    => $folder['short_url'],
@@ -48,20 +45,37 @@ class Helper {
 		return $series;
 	}
 
-  public static function generate_single_series($prefix, $folders, $outside_tuts_folder= false)
-  {
+  // for appending main id
+  public static function set_main_id($folders, $manual_id) {
+     $return_folders = array_map(function ($folder) use($manual_id) {
+      $folder[1][] = $manual_id;
+      return $folder;
+    }, $folders);
+    return $return_folders;
+  }
 
-    $tuts_folder = '';
-    if (config('app.tuts_folder')) {
-      $tuts_folder = config('app.tuts_folder');
-    }
-    if ($outside_tuts_folder) {
-      $tuts_folder = '';
-    }
+  public static function generate_single_series($prefix, $folders)
+  {
+    $tuts_folder = config('app.tuts_folder');
     $series = array_map(function ($folder) use($prefix, $tuts_folder) {
       return [
         'title'    => $folder[0],
         'url'      => $tuts_folder . $prefix . $folder[0],
+        'topic_ids' => $folder[1],
+      ];
+
+    }, $folders);
+    return $series;
+  }
+  public static function generate_single_series_manual($folders)
+  {
+    $series = array_map(function ($folder) {
+      $title = trim($folder[0], '/');
+      $title_explode = explode('/', $title);
+      $title = end($title_explode);
+      return [
+        'title'    => $title,
+        'url'      => $folder[0],
         'topic_ids' => $folder[1],
       ];
 

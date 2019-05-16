@@ -5,13 +5,6 @@ namespace App\Libraries\HelperTraits;
 trait OthersTrait {
 
 
-  public static function manual_load_one_by_one() {
-    $prefix = '';
-    $folders = [
-      [ '/others/youtube', [37,]],
-    ];
-    return self::generate_single_series($prefix, $folders);
-  }
   public static function others_folder()
   {
     $prefix = '/others/others-vendor/';
@@ -33,7 +26,6 @@ trait OthersTrait {
   public static function others() {
     return array_merge(
       self::others_folder(),
-      self::manual_load_one_by_one(),
     );
   }
 }

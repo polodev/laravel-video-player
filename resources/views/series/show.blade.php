@@ -4,14 +4,32 @@
 <h2>
 	SERIES:: {{ $series->title }}
 </h2>
+<div class="my-3 d-flex align-items-center">
+  <p class="mr-2">
+    Unders topics::
+  </p>
+  @if($series->topics)
+    <div class='py-2'>
+      @foreach ($series->topics as $topic)
+        <a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $topic->id]) }}">
+          {{$topic->title}}
+        </a>
+      @endforeach
+    </div>
+  @endif
 
-<div class="my-3 d-flex">
-  <a class="btn btn-primary mr-2" href="{{ route('series.edit', ['series' => $series->id]) }}">Edit</a>
-  <form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', ['series' => $series->id]) }}">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-danger">Delete</button>
-  </form>
+</div>
+
+<div class="my-3 d-flex align-items-center">
+  <p class="mr-2">Action:: </p>
+  <div class="d-flex">
+    <a class="btn btn-primary mr-2" href="{{ route('series.edit', ['series' => $series->id]) }}">Edit</a>
+    <form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', ['series' => $series->id]) }}">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
 </div>
 
 
