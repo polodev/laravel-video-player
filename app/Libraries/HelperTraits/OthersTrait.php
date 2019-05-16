@@ -2,9 +2,10 @@
 
 namespace App\Libraries\HelperTraits;
 
-trait OtherssTrait {
+trait OthersTrait {
 
-  public static function others() {
+  public static function others_folder()
+  {
     $prefix = 'wdata/tutorial/others/others-vendor/';
     $folders = [
       [ 'advancedreact-fullstack-advanced-react-graphql', [34, ], ],
@@ -17,5 +18,13 @@ trait OtherssTrait {
 
     ];
     return self::generate_single_series($prefix, $folders);
+
+  }
+
+
+  public static function others() {
+    return array_merge(
+      self::others_folder(),
+    );
   }
 }

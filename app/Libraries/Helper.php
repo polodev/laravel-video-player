@@ -5,7 +5,8 @@ namespace App\Libraries;
 use App\Libraries\HelperTraits\CodeCourseTrait;
 use App\Libraries\HelperTraits\JeffreyWayTrait;
 use App\Libraries\HelperTraits\LyndaTrait;
-use App\Libraries\HelperTraits\OtherssTrait;
+use App\Libraries\HelperTraits\OtherVendorsTrait;
+use App\Libraries\HelperTraits\OthersTrait;
 use App\Libraries\HelperTraits\TopicTrait;
 use App\Libraries\HelperTraits\UdemyTrait;
 
@@ -15,19 +16,16 @@ class Helper {
   use LyndaTrait;
   use UdemyTrait;
   use CodeCourseTrait;
-  use OtherssTrait;
+  use OthersTrait;
+  use OtherVendorsTrait;
 	public static function series(){
-		$jeffrey_way  = #
-		$code_course  = self::code_course();
-		$lynda        = self::lynda();
-		$udemy        = self::udemy();
-    $others        = self::others();
 		return array_merge(
       self::jeffrey_way(),
       self::lynda(),
       self::udemy(),
       self::code_course(),
-      self::others()
+      self::others(),
+      self::other_vendors(),
     );
 	}
 
