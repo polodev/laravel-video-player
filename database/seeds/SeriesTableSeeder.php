@@ -13,7 +13,7 @@ class SeriesTableSeeder extends Seeder
      */
     public function run()
     {
-        Series::truncate();
+      Series::truncate();
     	foreach(Helper::series() as $series) {
     		$new_series = Series::create([
     			'title' => $series['title'],
@@ -23,7 +23,5 @@ class SeriesTableSeeder extends Seeder
     			$new_series->topics()->attach($series['topic_ids']);
     		}
     	}
-
-        echo config('app.machine');
     }
 }

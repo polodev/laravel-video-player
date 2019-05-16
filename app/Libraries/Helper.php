@@ -2,23 +2,30 @@
 
 namespace App\Libraries;
 
+use App\Libraries\HelperTraits\CodeCourseTrait;
 use App\Libraries\HelperTraits\JeffreyWayTrait;
-use App\Libraries\HelperTraits\SerieTrait;
+use App\Libraries\HelperTraits\LyndaTrait;
+use App\Libraries\HelperTraits\OtherssTrait;
 use App\Libraries\HelperTraits\TopicTrait;
+use App\Libraries\HelperTraits\UdemyTrait;
 
 class Helper {
 	use TopicTrait;
   use JeffreyWayTrait;
-  use SerieTrait;
+  use LyndaTrait;
+  use UdemyTrait;
+  use CodeCourseTrait;
+  use OtherssTrait;
 	public static function series(){
 		$jeffrey_way  = self::jeffrey_way();
 		$code_course  = self::code_course();
 		$lynda        = self::lynda();
 		$udemy        = self::udemy();
+    $others        = self::others();
 		return array_merge($jeffrey_way, $code_course, $lynda, $udemy);
 	}
 
-	public static function generate_single_series($prefix, $folders) {
+	public static function generate_single_series_original($prefix, $folders) {
     $tuts_folder = '';
     if (config('app.tuts_folder')) {
       $tuts_folder = config('app.tuts_folder');
@@ -34,18 +41,18 @@ class Helper {
 		return $series;
 	}
 
-  public function generate_single_series_from_only_url($prefix, $files, $topics=[])
+  public static function generate_single_series($prefix, $folders)
   {
 
     $tuts_folder = '';
     if (config('app.tuts_folder')) {
       $tuts_folder = config('app.tuts_folder');
     }
-    $series = array_map(function ($url_last_portion) use($prefix, $tuts_folder, $topics) {
+    $series = array_map(function ($folder) use($prefix, $tuts_folder) {
       return [
-        'title'    => $url_last_portion,
-        'url'      => $tuts_folder . $prefix . $url_last_portion,
-        'topic_ids' => $topics,
+        'title'    => $folder[0],
+        'url'      => $tuts_folder . $prefix . $folder[0],
+        'topic_ids' => $folder[1],
       ];
 
     }, $folders);
