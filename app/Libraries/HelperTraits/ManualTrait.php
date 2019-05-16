@@ -9,6 +9,7 @@ trait ManualTrait {
     $folders = [
 
       [ '/wdata/tutorial/others/youtube', [37,]],
+      [ '/home/polo/Pictures/samerbunaworkshop', [17, 10,]],
 
 
     ];
