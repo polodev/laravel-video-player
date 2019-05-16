@@ -45,12 +45,15 @@ class Helper {
 		return $series;
 	}
 
-  public static function generate_single_series($prefix, $folders)
+  public static function generate_single_series($prefix, $folders, $outside_tuts_folder= false)
   {
 
     $tuts_folder = '';
     if (config('app.tuts_folder')) {
       $tuts_folder = config('app.tuts_folder');
+    }
+    if ($outside_tuts_folder) {
+      $tuts_folder = '';
     }
     $series = array_map(function ($folder) use($prefix, $tuts_folder) {
       return [

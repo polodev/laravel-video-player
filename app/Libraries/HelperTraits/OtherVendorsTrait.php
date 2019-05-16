@@ -6,7 +6,7 @@ trait OtherVendorsTrait {
 
   public static function egghead()
   {
-    $prefix = 'egghead/';
+    $prefix = '/egghead/';
     $folders = [
       [ 'Egghead - Asyncronous Programming', [36, ] ],
       [ 'Egghead - Getting Started with Express.js', [36, ] ],

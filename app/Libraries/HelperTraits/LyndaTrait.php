@@ -6,7 +6,7 @@ trait LyndaTrait {
 
   public static function lynda_backend()
   {
-    $prefix = 'lynda/lynda-backend/';
+    $prefix = '/lynda/lynda-backend/';
     $folders = [
       ['Deploying Docker to AWS', [17], ],
       ['Learning Docker', [17], ],
@@ -21,7 +21,7 @@ trait LyndaTrait {
   }
   public static function lynda_node_js()
   {
-    $prefix = 'lynda/lynda-node-js/';
+    $prefix = '/lynda/lynda-node-js/';
     $folders = [
       [ 'Building RESTful Web APIs with Node.js and Express', [17, ] ],
       [ 'Databases for Node.js Developers', [17, ] ],
@@ -45,7 +45,7 @@ trait LyndaTrait {
   }
   public static function lynda_php_mysql()
   {
-    $prefix = 'lynda/lynda-php-with-mysql/';
+    $prefix = '/lynda/lynda-php-with-mysql/';
     $folders = [
       [ 'Advanced PHP', [17,] ],
       [ 'Building APIs in PHP Using the Silex Micro Framework', [17,] ],
@@ -69,7 +69,7 @@ trait LyndaTrait {
   }
   public static function lynda_frontend()
   {
-    $prefix = 'lynda/lynda-frontend/';
+    $prefix = '/lynda/lynda-frontend/';
     $folders = [
       [ 'CSS Shorts Weekly-dec-10', [17,] ],
       [ 'Lynda.com - HTML5 Features (7 short courses)', [17,] ],
@@ -81,7 +81,7 @@ trait LyndaTrait {
   }
   public static function lynda_others()
   {
-    $prefix = 'lynda/lynda-others/';
+    $prefix = '/lynda/lynda-others/';
     $folders = [
       [ 'Grammar Fundamentals', [17,] ],
       [ 'Lynda.com - Project Management Essentials', [17,] ],
@@ -98,7 +98,7 @@ trait LyndaTrait {
   }
   public static function lynda_wordpress()
   {
-    $prefix = 'lynda/lynda-wordpress/';
+    $prefix = '/lynda/lynda-wordpress/';
     $folders = [
       [ 'Advanced WordPress_ Action and Filter Hooks', [17,] ],
       [ 'Lynda - WordPress and Internationalization', [17,] ],

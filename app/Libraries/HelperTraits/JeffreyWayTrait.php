@@ -5,7 +5,7 @@ namespace App\Libraries\HelperTraits;
 trait JeffreyWayTrait {
 
   public static function jeffrey_way() {
-    $prefix = 'jeffreyway/';
+    $prefix = '/jeffreyway/';
     $folders = [
       ['laracast_git', [21, 23,], ],
       ['laracasts_30_days_to_learn_jquery', [21,9,], ],

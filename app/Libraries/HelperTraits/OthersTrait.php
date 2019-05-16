@@ -8,13 +8,13 @@ trait OthersTrait {
   public static function manual_load_one_by_one() {
     $prefix = '';
     $folders = [
-      [ '/wdata/tutorial/others/youtube', [37,]],
+      [ '/others/youtube', [37,]],
     ];
     return self::generate_single_series($prefix, $folders);
   }
   public static function others_folder()
   {
-    $prefix = 'wdata/tutorial/others/others-vendor/';
+    $prefix = '/others/others-vendor/';
     $folders = [
       [ 'advancedreact-fullstack-advanced-react-graphql', [34, ], ],
       [ 'frontendmasters-rapid-development-on-aws-react,-node.js-graphql', [34, ], ],
