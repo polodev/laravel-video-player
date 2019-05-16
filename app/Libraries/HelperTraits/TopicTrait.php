@@ -32,7 +32,7 @@ trait TopicTrait {
 			'codeigniter', //25
 			'c', // 26
 			'editing software', //27
-			'english', // 28
+			'English', // 28
 			'Business', // 29
 			'learning', // 30;
 			'php framework', // 31;
@@ -45,6 +45,13 @@ trait TopicTrait {
       'Manual', // 38
       'Docker', // 39
       'GraphQL', // 40
+      'Angular', // 41
+      'Design tool', // 42
+      'AWS', //43
+      'MongoDB', //44
+      'Memory', //45
+      'Life Style', //46
+
 
 
 
