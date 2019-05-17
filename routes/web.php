@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::resource('/video', 'VideoController');
 Route::get('/render-video/{video}', 'VideoController@render_video')->name('render_video');
 Route::get('/render-pdf/{video}', 'VideoController@render_pdf')->name('render_pdf');
+Route::get('/view-pdf/{video}', 'VideoController@view_pdf')->name('view_pdf');
 
 Route::resource('/series', 'SeriesController');
 Route::get('/series-hidden', 'SeriesController@index_hidden');

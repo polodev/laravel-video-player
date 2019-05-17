@@ -63,6 +63,12 @@ class VideoController extends Controller
     public function render_pdf(Video $video) {
       return response()->file($video->path_name);
     }
+    public function view_pdf(Video $video)
+    {
+      $pdf_link = route('render_pdf', ['video' => $video->id]);
+      return view( 'pdfview', compact( 'pdf_link' ) );
+
+    }
 
     /**
      * Display the specified resource.
