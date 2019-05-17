@@ -14,7 +14,11 @@ class TopicController extends Controller
      */
     public function index()
     {
-      $topics = Topic::orderBy('title')->paginate(15);
+      // $topics = Topic::orderBy('title')->paginate(15);
+      $topics = Topic::where(function($query) {
+        $query->has('series');
+      })->orderBy('title')->paginate(15);
+
 
       $tquery      = false;
       if (request('tquery')) {
