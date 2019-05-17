@@ -18,6 +18,7 @@ class CreateVideosTable extends Migration
             $table->string('extension');
             $table->text('path_name');
             $table->text('file_name');
+            $table->string('file_type')->default('video');
             $table->text('file_name_without_extension');
             $table->integer('series_id');
             $table->boolean('completed')->default(false);

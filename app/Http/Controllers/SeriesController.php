@@ -157,7 +157,7 @@ class SeriesController extends Controller
       }
       $series_id         = $series->id;
       $files             = File::allFiles($url);
-      $allowed_extension = ['mp4', 'avi', 'mov', 'm4v',];
+      $allowed_extension = ['mp4', 'avi', 'mov', 'm4v', 'pdf',];
       $files             = array_filter($files, function ($file) use($allowed_extension) {
         $extension =  $file->getExtension();
         return in_array($extension, $allowed_extension);
@@ -172,6 +172,7 @@ class SeriesController extends Controller
 
       foreach ($files as $file) {
         $extension = $file->getExtension() ;
+        $file_type = $extension == 'pdf' ? 'pdf' : 'video';
         $path_name = $file->getPathname() ;
         $file_name = $file->getFilename() ;
         $extension_with_dot = ".{$extension}";
@@ -179,6 +180,7 @@ class SeriesController extends Controller
         $video_table_args[] = [
           'extension' => $extension,
           'path_name' => $path_name,
+          'file_type' => $file_type,
           'file_name' => $file_name,
           'file_name_without_extension' => $file_name_without_extension,
           'series_id' => $series_id,

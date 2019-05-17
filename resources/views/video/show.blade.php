@@ -6,26 +6,32 @@
 	<div class='card-header'>
 		<h2>
 			{{ $current_video->file_name_without_extension }}
-			<small>(Video-no:  {{ $current_video->video_index() + 1 }})</small>
+			<small>(Media-no:  {{ $current_video->video_index() + 1 }})</small>
 		</h2>
 	</div>
 	<!-- /.card-header -->
 	<div class='card-body d-block justify-content-center ' id="video-player-card">
-
-
 		<div class="d-flex justify-content-center">
-			<my-video
-				video_source="{{$current_video_link}}"
-				@if($next)
-					next_url="{{ route('video.show', ['video' => $next->id]) }}"
-				@endif
-			></my-video>
+      @if ($current_video->file_type == 'video')
+        <my-video
+          video_source="{{$current_render_link}}"
+          @if($next)
+            next_url="{{ route('video.show', ['video' => $next->id]) }}"
+          @endif
+        ></my-video>
+      @else
+        <my-pdf
+          pdf_source="{{$current_render_link}}"
+        >
+
+        </my-pdf>
+      @endif
 		</div>
 		<div class='my-2'>
 			<p>
 				You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a>
 			</p>
-      <p> Video path:</p>
+      <p> Path:</p>
       <p>{{ $current_video->path_name }}</p>
 			<div class="mt-2">
 				@if ($previous)
@@ -65,6 +71,7 @@
 					<br>
 					<small> Status: {{ $video->completed ? "Completed" : 'Not Completed' }} </small>
 				</div>
+        <p>Type: {{ $video->file_type }} </p>
 			</div>
 		</div>
 @endforeach

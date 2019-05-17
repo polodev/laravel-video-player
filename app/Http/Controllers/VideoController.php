@@ -58,7 +58,10 @@ class VideoController extends Controller
     // render video in laravel
     public function render_video(Video $video) {
       $stream = new VideoStream($video->path_name);
-      $stream->start(); 
+      $stream->start();
+    }
+    public function render_pdf(Video $video) {
+      return response()->file($video->path_name);
     }
 
     /**
@@ -74,17 +77,21 @@ class VideoController extends Controller
       $previous           = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
       $next               = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
       $all_videos         = $video->series->videos;
-      $current_video_link = route('render_video', ['video' => $video->id]);
+      if ($video->file_type == 'video') {
+        $current_render_link = route('render_video', ['video' => $video->id]);
+      }else {
+        $current_render_link = route('render_pdf', ['video' => $video->id]);
+      }
 
       $data = [
         'all_videos'         => $all_videos,
         'next'               => $next,
         'previous'           => $previous,
         'current_video'      => $video,
-        'current_video_link' => $current_video_link,
+        'current_render_link' => $current_render_link,
         ];
 
-        
+
 
         return view('video.show', $data);
 

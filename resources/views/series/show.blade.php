@@ -73,6 +73,7 @@
 					<br>
 					<small> Status: {{ $video->completed ? "Completed" : 'Not Completed' }} </small>
 				</div>
+        <p>Type: {{$video->file_type}} </p>
 			</div>
 		</div>
 
