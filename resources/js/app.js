@@ -24,6 +24,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('my-video', require('./components/MyVideo.vue').default);
 Vue.component('video-player', require('./components/VideoPlayer.vue').default);
 Vue.component('my-pdf', require('./components/MyPdf.vue').default);
+Vue.component('pdf-view', require('./components/PdfView.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

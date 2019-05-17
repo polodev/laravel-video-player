@@ -26,6 +26,7 @@
     "dependencies": {
         "@videojs/http-streaming": "^1.10.1",
         "video.js": "^7.5.4",
-        "videojs-hotkeys": "^0.2.25"
+        "videojs-hotkeys": "^0.2.25",
+        "vue-pdf": "^4.0.6"
     }
 }
