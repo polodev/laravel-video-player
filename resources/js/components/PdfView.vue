@@ -1,16 +1,11 @@
 <template>
   <div class="pdf-content">
-    <VuePdfReader :url="url" loading-text="loading"/>
+    <h1>{{url}}</h1>
   </div>
 </template>
 <script>
-import 'vue-pdf-reader/dist/vue-pdf-reader.min.css';
-import VuePdfReader from 'vue-pdf-reader';
 export default {
   props: ['url'],
-  components: {
-    VuePdfReader,
-  }
 
 }
 </script>
