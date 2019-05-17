@@ -17,7 +17,7 @@ class TopicController extends Controller
       // $topics = Topic::orderBy('title')->paginate(15);
       $topics = Topic::where(function($query) {
         $query->has('series');
-      })->orderBy('title')->paginate(15);
+      })->orderBy('title')->paginate(30);
 
 
       $tquery      = false;
