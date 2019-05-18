@@ -8,6 +8,7 @@ use App\Libraries\HelperTraits\LyndaTrait;
 use App\Libraries\HelperTraits\ManualTrait;
 use App\Libraries\HelperTraits\OtherVendorsTrait;
 use App\Libraries\HelperTraits\OthersTrait;
+use App\Libraries\HelperTraits\TeamTreeHouseTrait;
 use App\Libraries\HelperTraits\TopicTrait;
 use App\Libraries\HelperTraits\UdemyTrait;
 
@@ -19,13 +20,15 @@ class Helper {
   use CodeCourseTrait;
   use OthersTrait;
   use OtherVendorsTrait;
+  use TeamTreeHouseTrait;
   use ManualTrait;
 	public static function series(){
 		return array_merge(
       self::jeffrey_way(),
       self::lynda(),
       self::udemy(),
-      self::code_course(),
+      self::codecourse(),
+      self::teamtreehouse(),
       self::others(),
       self::other_vendors(),
       self::manual_one_by_one(),

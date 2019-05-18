@@ -23,7 +23,7 @@ trait TopicTrait {
 			'wordpress', //16
 			'lynda', //17
 			'tutsplus', // 18
-			'treehouse', // 19
+			'teamtreehouse', // 19
 			'udemy', // 20
 			'jeffrey Way', // 21
 			'codecourse', // 22

@@ -4,7 +4,7 @@ namespace App\Libraries\HelperTraits;
 
 trait CodeCourseTrait {
 
-  public static function code_course() {
+  public static function codecourse() {
     $prefix = '/codecourse/';
     $folders = [
       [ 'Build a classified ads site', [4, 15, 22,] ],
