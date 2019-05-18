@@ -66,7 +66,7 @@ trait UdemyTrait {
     return array_merge(
       self::udemy_backend(),
       self::udemy_frontend(),
-      self::udemy_others(),
+      self::udemy_others()
     );
   }
 }

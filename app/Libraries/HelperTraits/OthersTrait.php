@@ -25,7 +25,7 @@ trait OthersTrait {
 
   public static function others() {
     return array_merge(
-      self::others_folder(),
+      self::others_folder()
     );
   }
 }
