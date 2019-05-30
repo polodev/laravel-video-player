@@ -157,7 +157,7 @@ class SeriesController extends Controller
       }
       $series_id         = $series->id;
       $files             = File::allFiles($url);
-      $allowed_extension = ['mp4', 'avi', 'mov', 'm4v', 'pdf',];
+      $allowed_extension = ['mp4', 'avi', 'mov', 'm4v', 'webm', 'pdf',];
       $files             = array_filter($files, function ($file) use($allowed_extension) {
         $extension =  $file->getExtension();
         return in_array($extension, $allowed_extension);
