@@ -18,7 +18,7 @@ trait ManualTrait {
   }
   public static function manual() {
     return array_merge(
-      self::manual_one_by_one(),
+      self::manual_one_by_one()
     );
   }
 

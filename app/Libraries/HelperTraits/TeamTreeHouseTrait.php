@@ -92,7 +92,7 @@ trait TeamTreeHouseTrait {
       self::teamtreehouse_frontend(),
       self::teamtreehouse_others(),
       self::teamtreehouse_wp(),
-      self::teamtreehouse_python(),
+      self::teamtreehouse_python()
     );
   }
 }

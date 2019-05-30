@@ -19,7 +19,7 @@ trait OtherVendorsTrait {
   }
   public static function other_vendors() {
     return array_merge(
-      self::egghead(),
+      self::egghead()
     );
   }
 }
