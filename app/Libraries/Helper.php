@@ -31,7 +31,7 @@ class Helper {
       self::teamtreehouse(),
       self::others(),
       self::other_vendors(),
-      self::manual_one_by_one()
+      self::manual()
     );
 	}
 
