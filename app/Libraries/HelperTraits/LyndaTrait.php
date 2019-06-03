@@ -9,8 +9,9 @@ trait LyndaTrait {
     $prefix = '/lynda/lynda-backend/';
     $folders = [
       ['Deploying Docker to AWS', [17], ],
-      ['Learning Docker', [17], ],
-      ['Lynda - Amazon Web Services Essential Training (Aug 22, 2014)', [17], ],
+      ['Lynda - AWS for DevOps Continuous Delivery and Process Automation', [17, 43,], ],
+      ['Learning Docker', [17, 39,], ],
+      ['Lynda - Amazon Web Services Essential Training (Aug 22, 2014)', [17, 43,], ],
       ['lynda.com - Practical Apache Web Server Administration', [17], ],
       ['Lynda.com - Python 3 Essential Training', [17], ],
       ['Lynda - Learning NGINX', [17], ],

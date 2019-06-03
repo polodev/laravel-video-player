@@ -4,6 +4,7 @@ namespace App\Libraries;
 
 use App\Libraries\HelperTraits\CodeCourseTrait;
 use App\Libraries\HelperTraits\JeffreyWayTrait;
+use App\Libraries\HelperTraits\LinuxAcademyTrait;
 use App\Libraries\HelperTraits\LyndaTrait;
 use App\Libraries\HelperTraits\ManualTrait;
 use App\Libraries\HelperTraits\OtherVendorsTrait;
@@ -22,6 +23,7 @@ class Helper {
   use OtherVendorsTrait;
   use TeamTreeHouseTrait;
   use ManualTrait;
+  use LinuxAcademyTrait;
 	public static function series(){
 		return array_merge(
       self::jeffrey_way(),
@@ -31,7 +33,8 @@ class Helper {
       self::teamtreehouse(),
       self::others(),
       self::other_vendors(),
-      self::manual()
+      self::manual(),
+      self::linux_academy_linux()
     );
 	}
 

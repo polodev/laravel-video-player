@@ -61,12 +61,35 @@ trait UdemyTrait {
     $folders = self::set_main_id($folders, [20]);
     return self::generate_single_series($prefix, $folders);
   }
+  public static function udemy_aws() {
+    $prefix = '/udemy/udemy-aws/';
+    $folders = [
+      [ 'Amazon Web Services (AWS) Certified 2019 - 4 Certifications!', [43,], ],
+      [ 'Amazon Web Services - Web Hosting & Cloud Computing With AWS', [43,], ],
+      [ 'Learn Amazon Web Services easily to become Architect', [43,], ],
+
+    ];
+    $folders = self::set_main_id($folders, [20]);
+    return self::generate_single_series($prefix, $folders);
+  }
+  public static function udemy_linux() {
+    $prefix = '/udemy/udemy-aws/';
+    $folders = [
+      [ 'Complete Linux Bash Shell Scripting with Real Life Examples', [12,] ],
+      [ 'Learn Linux Shell Scripting – Fundamentals of Bash 4.4', [12,] ],
+      [ 'Linux Command Line Interface and BASH Scripting', [12,] ],
+    ];
+    $folders = self::set_main_id($folders, [20]);
+    return self::generate_single_series($prefix, $folders);
+  }
   public static function udemy()
   {
     return array_merge(
       self::udemy_backend(),
       self::udemy_frontend(),
-      self::udemy_others()
+      self::udemy_others(),
+      self::udemy_aws(),
+      self::udemy_linux()
     );
   }
 }
