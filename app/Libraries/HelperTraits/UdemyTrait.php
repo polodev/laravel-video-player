@@ -12,7 +12,6 @@ trait UdemyTrait {
       [ '[Tutsgalaxy.com] - Modern WordPress Plugin Design Course. Cut & Paste examples', [16,] ],
       [ 'Udemy - Automate the Boring Stuff with Python Programming (2015)', [6,] ],
       [ 'Udemy-become-a-wordpress-developer-php-javascript', [16,] ],
-      [ 'udemy-complete-linux-training-course-to-get-your-dream-it-job-2019', [12,] ],
       [ 'udemy_learn_docker_from_scratch_to_docker_swarm_for_devops', [39, ] ],
       [ 'udemy_wp_development_themes_and_plugin', [16,] ],
       [ 'Wordpress Security - From Beginner to .htaccess', [13,] ],
@@ -73,11 +72,12 @@ trait UdemyTrait {
     return self::generate_single_series($prefix, $folders);
   }
   public static function udemy_linux() {
-    $prefix = '/udemy/udemy-aws/';
+    $prefix = '/udemy/udemy-linux/';
     $folders = [
       [ 'Complete Linux Bash Shell Scripting with Real Life Examples', [12,] ],
       [ 'Learn Linux Shell Scripting – Fundamentals of Bash 4.4', [12,] ],
       [ 'Linux Command Line Interface and BASH Scripting', [12,] ],
+      [ 'udemy-complete-linux-training-course-to-get-your-dream-it-job-2019', [12,] ],
     ];
     $folders = self::set_main_id($folders, [20]);
     return self::generate_single_series($prefix, $folders);
