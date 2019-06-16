@@ -10,9 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('extra_style')
