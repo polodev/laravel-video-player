@@ -13,6 +13,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('extra_style')
+<style>
+.hidden-block a{
+  color: #eee;
+  text-decoration: none;
+}
+</style>
 </head>
 <body>
     <div id="app">
@@ -86,6 +92,9 @@
             </div>
         </main>
     </div>
+<div class="hidden-block">
+    <a href="/series-hidden">Series-Hidden</a>
+</div>
 <script src="{{ asset('js/app.js') }}" ></script>
 <script src="{{ asset('js/main.js') }}"></script>
 @stack('extra_script')
