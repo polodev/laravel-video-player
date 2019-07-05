@@ -160,6 +160,7 @@ class SeriesController extends Controller
       $allowed_extension = ['mp4', 'avi', 'mov', 'm4v', 'mkv', 'webm', 'pdf',];
       $files             = array_filter($files, function ($file) use($allowed_extension) {
         $extension =  $file->getExtension();
+        $extension = strtolower($extension);
         return in_array($extension, $allowed_extension);
       });
 
