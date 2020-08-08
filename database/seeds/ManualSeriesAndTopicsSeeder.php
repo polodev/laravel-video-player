@@ -125,17 +125,40 @@ class ManualSeriesAndTopicsSeeder extends Seeder
         "UDEMY_IMPROVE_YOUR_ENGLISH_VOCABULARY_WITH_OVER_70_TRICKY_WORDS",
         "Writing Tips to Instantly Improve Your Writing",
       ],
+      "pdftutorial"=> [
+        "Angular",
+        "blinkist",
+        "cms",
+        "Frontend",
+        "javascript",
+        "Laravel",
+        "linux",
+        "memory",
+        "Nodejs",
+        "others",
+        "Php",
+        "php_framework",
+        "Programming",
+        "python",
+        "React",
+        "sql",
+        "Vue",
+        "wordpress",
+      ]
     ];
+
     $series_list = [];
     $topics = [];
-    foreach ($outer_folders as $outer_folder_key => $outer_folder_value) {
-      foreach ($outer_folder_value as $inner_folder_value) {
+    foreach ($outer_folders as $outer_folder_name => $outer_folder_file) {
+      foreach ($outer_folder_file as $inner_folder_name) {
         $single_series = [
-          'topic_title' => $outer_folder_key,
-          'title' => $inner_folder_value,
-          'url' => "{$tuts_folder}/{$outer_folder_key}/{$inner_folder_value}",
+          'topic_title' => $outer_folder_name,
+          'title' => $inner_folder_name,
+          'url' => "{$tuts_folder}/{$outer_folder_name}/{$inner_folder_name}",
         ];
-        $topics[] = $outer_folder_key;
+        if ( ! in_array($outer_folder_name, $topics) ) {
+          $topics[] = $outer_folder_name;
+        }
         $series_list[] = $single_series;
       }
     }
