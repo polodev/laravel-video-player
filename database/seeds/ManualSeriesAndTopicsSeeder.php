@@ -138,7 +138,7 @@ class ManualSeriesAndTopicsSeeder extends Seeder
         "others",
         "Php",
         "php_framework",
-        "Programming",
+        "Programming",
         "python",
         "React",
         "sql",
