@@ -83,6 +83,7 @@ class VideoController extends Controller
       $previous           = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
       $next               = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
       $all_videos         = $video->series->videos;
+      $all_videos_count = $video->series->videos->count();
       if ($video->file_type == 'video') {
         $current_render_link = route('render_video', ['video' => $video->id]);
       }else {
@@ -91,6 +92,7 @@ class VideoController extends Controller
 
       $data = [
         'all_videos'         => $all_videos,
+        'all_videos_count'   => $all_videos_count,
         'next'               => $next,
         'previous'           => $previous,
         'current_video'      => $video,

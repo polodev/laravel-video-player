@@ -6,7 +6,10 @@
 	<div class='card-header'>
 		<h2>
 			{{ $current_video->file_name_without_extension }}
-			<small>(Media-no:  {{ $current_video->video_index() + 1 }})</small>
+			<small>
+       (Media-no:  {{ $current_video->video_index() + 1 }} / {{ $all_videos_count }})   
+
+      </small>
 		</h2>
 	</div>
 	<!-- /.card-header -->
