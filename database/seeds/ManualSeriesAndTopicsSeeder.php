@@ -46,6 +46,7 @@ class ManualSeriesAndTopicsSeeder extends Seeder
 
   public function series_and_topics_list1(){
     $tuts_folder = '/home/polo/tuts';
+    $tuts_folder = 'C:/Users/Polo Dev/Pictures/tuts';
     $outer_folders = [
       "code-course" => [
         "Build a classified ads site",
@@ -63,6 +64,7 @@ class ManualSeriesAndTopicsSeeder extends Seeder
         "Learn Vue.js by example",
         "Learn Vuex",
         "nuxt-js-laravel-authentication",
+        "Practical-Git",
         "Roles and permissions in Laravel",
         "Tips for cleaner code",
         "Unit testing with PHPUnit",
@@ -77,6 +79,8 @@ class ManualSeriesAndTopicsSeeder extends Seeder
         "laracasts_solid",
         "laracasts_understand_regular_expressions",
         "laracasts_vue2",
+        "laracasts_way_laravel_authentication",
+        "laracasts_way_testing_laravel",
       ],
       "linux-academy" => [
         "Linux Academy - Linux Academy Red Hat Certificate of Expertise in Containerized Application Development - Prep Course",
@@ -95,10 +99,17 @@ class ManualSeriesAndTopicsSeeder extends Seeder
 
       ],
       "tutsplus" => [
+        "Agile_Design_Patterns",
         "How to Be a Terminal Pro",
         "TutsPlus Advanced OOP in PHP With Tests",
         "TutsPlus - Build a CMS With Laravel",
         "tutsplus.com - OOP in PHP With Tests ® vampiri6ka",
+      ],
+      "udemy-backend" => [
+        "Introduction to Docker",
+        "Udemy - Setup Webserver (Nginx) & a Caching Server(Varnish)",
+        "udemy_restful_api_with_laravel_5.4_definitive_guide",
+        "Udemy-become-a-wordpress-developer-php-javascript",
       ],
       "udemy-aws" => [
         "Amazon Web Services (AWS) Certified 2019 - 4 Certifications!",
@@ -110,12 +121,12 @@ class ManualSeriesAndTopicsSeeder extends Seeder
         "udemy-nodejs-the-complete-guide",
         "udemy_nuxt.js_vue.js_on_steroids",
         "Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex)",
-
       ],
       "udemy-linux" => [
         "Complete Linux Bash Shell Scripting with Real Life Examples",
         "Learn Linux Shell Scripting – Fundamentals of Bash 4.4",
         "Linux Command Line Interface and BASH Scripting",
+        "udemy-complete-linux-training-course-to-get-your-dream-it-job-2019",
 
       ],
       "udemy-others" => [
@@ -123,6 +134,7 @@ class ManualSeriesAndTopicsSeeder extends Seeder
         "Mastering IELTS Writing Task 2",
         "Morning Routines The Ultimate Morning Routine Guide",
         "UDEMY_IMPROVE_YOUR_ENGLISH_VOCABULARY_WITH_OVER_70_TRICKY_WORDS",
+        "udemy-blog-for-a-living-complete-blogging-training-level-1,-2-3",
         "Writing Tips to Instantly Improve Your Writing",
       ],
       "pdftutorial"=> [
