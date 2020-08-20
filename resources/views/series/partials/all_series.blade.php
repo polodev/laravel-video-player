@@ -4,15 +4,15 @@
 				<div class='row'>
 					<div class='col-sm-9'>
 						<h3>
-							<a href="{{ route('series.show', ['series' => $series->id]) }}">
+							<a href="{{ route('series.show', $series) }}">
 								 {{ $series->title }} 
 							</a>
 						</h3>
 					</div>
 					<div class='col-sm-3'>
 						<div class="d-flex justify-content-end">
-							<a class="btn btn-primary mr-2" href="{{ route('series.edit', $series->id) }}">Edit</a>
-							<form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', ['series' => $series->id]) }}">
+							<a class="btn btn-primary mr-2" href="{{ route('series.edit', $series) }}">Edit</a>
+							<form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', $series) }}">
 								@csrf
 								@method('DELETE')
 								<button type="submit" class="btn btn-danger">Delete</button>
@@ -24,7 +24,7 @@
 				@if($series->topics)
 					<div class='py-2'>
 						@foreach ($series->topics as $topic)
-							<a class="btn btn-primary" href="{{ route('topic.show', $topic->id) }}">
+							<a class="btn btn-primary" href="{{ route('topic.show', $topic) }}">
 								{{$topic->title}}
 							</a>
 						@endforeach

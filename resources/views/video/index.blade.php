@@ -7,11 +7,11 @@
 			<div class='card-body'>
 				<div class='d-flex justify-content-between'>
 					<h3>
-						<a href="{{ route('video.show', $video->id) }}">
+						<a href="{{ route('video.show', $video) }}">
 							 {{ $video->title }} 
 						</a>
 					</h3>
-					<form method="post" action="{{ route('video.destroy', $video->id) }}">
+					<form method="post" action="{{ route('video.destroy', $video) }}">
 						@csrf
 						@method('DELETE')
 						<button type="submit" class="btn btn-danger">Delete</button>
@@ -20,7 +20,7 @@
 				<!-- /.d-flex -->
 				@if($video->topic)
 				<div class='py-2'>
-					<a class="btn btn-primary" href="{{ route('topic.show', $video->topic->id) }}">
+					<a class="btn btn-primary" href="{{ route('topic.show', $video->topic) }}">
 						{{$video->topic->title}}
 					</a>
 				</div>

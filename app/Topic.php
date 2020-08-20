@@ -9,6 +9,15 @@ use Spatie\Sluggable\SlugOptions;
 class Topic extends Model
 {
 	 use HasSlug;
+  public function getRouteKey()
+  {
+    return $this->slug;
+  }
+  public function getRouteKeyName()
+  {
+      return 'slug';
+  }
+
 
     /**
      * Get the options for generating the slug.

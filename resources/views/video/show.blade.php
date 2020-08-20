@@ -19,7 +19,7 @@
         <my-video
           video_source="{{$current_render_link}}"
           @if($next)
-            next_url="{{ route('video.show', $next->id) }}"
+            next_url="{{ route('video.show', $next) }}"
           @endif
         ></my-video>
       @else
@@ -38,10 +38,10 @@
       <p>{{ $current_video->path_name }}</p>
 			<div class="mt-2">
 				@if ($previous)
-					<a class="btn btn-info mx-1" href="{{ route('video.show', $previous->id) }}">Previous video</a>
+					<a class="btn btn-info mx-1" href="{{ route('video.show', $previous) }}">Previous video</a>
 				@endif
 				@if ($next)
-					<a class="btn btn-info mx-1" href="{{ route('video.show', $next->id) }}">Next video</a>
+					<a class="btn btn-info mx-1" href="{{ route('video.show', $next) }}">Next video</a>
 				@endif
 			</div>
 		</div>

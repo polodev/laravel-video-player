@@ -65,7 +65,7 @@ class VideoController extends Controller
     }
     public function view_pdf(Video $video)
     {
-      $pdf_link = route('render_pdf', $video->id);
+      $pdf_link = route('render_pdf', $video);
       return view( 'pdfview', compact( 'pdf_link' ) );
 
     }
@@ -85,9 +85,9 @@ class VideoController extends Controller
       $all_videos         = $video->series->videos;
       $all_videos_count = $video->series->videos->count();
       if ($video->file_type == 'video') {
-        $current_render_link = route('render_video', $video->id);
+        $current_render_link = route('render_video', $video);
       }else {
-        $current_render_link = route('render_pdf', $video->id);
+        $current_render_link = route('render_pdf', $video);
       }
 
       $data = [

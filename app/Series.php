@@ -10,6 +10,14 @@ class Series extends Model
 {
 	use HasSlug;
 	protected $guarded = [];
+	public function getRouteKey()
+	{
+	    return $this->slug;
+	}
+	public function getRouteKeyName()
+	{
+	    return 'slug';
+	}
 	public function topics()
 	{
 		return $this->belongsToMany(Topic::class, 'series_topic');

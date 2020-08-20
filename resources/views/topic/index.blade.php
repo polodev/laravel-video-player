@@ -21,14 +21,14 @@
 			<div class='card-body'>
 				<div class='d-flex justify-content-between'>
 					<h4>
-						<a href="{{ route('topic.show', $topic->id) }}">
+						<a href="{{ route('topic.show', $topic) }}">
 							 {{ $topic->title }} 
 							 @if($topic->series)
 							 	- ({{count($topic->series)}})
 							 @endif
 						</a>
 					</h4>
-					<form onsubmit="return confirm('Are you sure you want to delete this entry')" method="post" action="{{ route('topic.destroy', $topic->id) }}">
+					<form onsubmit="return confirm('Are you sure you want to delete this entry')" method="post" action="{{ route('topic.destroy', $topic) }}">
 						@csrf
 						@method('DELETE')
 						<button type="submit" class="btn btn-danger">Delete</button>
