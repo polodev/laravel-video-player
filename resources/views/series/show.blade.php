@@ -11,7 +11,7 @@
   @if($series->topics)
     <div class='py-2'>
       @foreach ($series->topics as $topic)
-        <a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $topic->id]) }}">
+        <a class="btn btn-primary" href="{{ route('topic.show', $topic->id) }}">
           {{$topic->title}}
         </a>
       @endforeach
@@ -23,8 +23,8 @@
 <div class="my-3 d-flex align-items-center">
   <p class="mr-2">Action:: </p>
   <div class="d-flex">
-    <a class="btn btn-primary mr-2" href="{{ route('series.edit', ['series' => $series->id]) }}">Edit</a>
-    <form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', ['series' => $series->id]) }}">
+    <a class="btn btn-primary mr-2" href="{{ route('series.edit', $series->id) }}">Edit</a>
+    <form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', $series->id) }}">
       @csrf
       @method('DELETE')
       <button type="submit" class="btn btn-danger">Delete</button>
@@ -35,13 +35,13 @@
 
 
 <div class="my-3">
-  <form class="d-inline-block" method="post" action="{{ route('series.generate_videos', ['series' => $series->id]) }}">
+  <form class="d-inline-block" method="post" action="{{ route('series.generate_videos', $series->id) }}">
     @csrf
     <button type="submit" class='btn btn-info'>
       Generate / Regenerate Videos
     </button>
   </form>
-  <form class="d-inline-block" method="post" action="{{ route('series.delete_videos', ['series' => $series->id]) }}">
+  <form class="d-inline-block" method="post" action="{{ route('series.delete_videos', $series->id) }}">
     @csrf
     <button type="submit" class='btn btn-danger'>
       Remove videos
@@ -61,7 +61,7 @@
 				</div>
 
 				<div class="my-1">
-					<a href="{{ route('video.show', ['video' => $video->id]) }}">
+					<a href="{{ route('video.show',$video->id) }}">
 						{{ $video->file_name_without_extension }}
 					</a>
 				</div>

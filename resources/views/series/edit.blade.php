@@ -5,7 +5,7 @@
 <div class=''>
 	<h2>Add a series</h2>
 
-	<form action="{{ route('series.update', ['series' => $series->id]) }}" method="post">
+	<form action="{{ route('series.update', $series->id) }}" method="post">
 		@csrf
 		@method('PUT')
 		<div class='form-group'>

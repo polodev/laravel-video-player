@@ -19,7 +19,7 @@
         <my-video
           video_source="{{$current_render_link}}"
           @if($next)
-            next_url="{{ route('video.show', ['video' => $next->id]) }}"
+            next_url="{{ route('video.show', $next->id) }}"
           @endif
         ></my-video>
       @else
@@ -32,16 +32,16 @@
 		</div>
 		<div class='my-2'>
 			<p>
-				You are watching Series:: <a href="{{ route('series.show', ['series.show' => $current_video->series->id]) }}">{{ $current_video->series->title }}</a>
+				You are watching Series:: <a href="{{ route('series.show', $current_video->series->id) }}">{{ $current_video->series->title }}</a>
 			</p>
       <p> Path:</p>
       <p>{{ $current_video->path_name }}</p>
 			<div class="mt-2">
 				@if ($previous)
-					<a class="btn btn-info mx-1" href="{{ route('video.show', ['video' => $previous->id]) }}">Previous video</a>
+					<a class="btn btn-info mx-1" href="{{ route('video.show', $previous->id) }}">Previous video</a>
 				@endif
 				@if ($next)
-					<a class="btn btn-info mx-1" href="{{ route('video.show', ['video' => $next->id]) }}">Next video</a>
+					<a class="btn btn-info mx-1" href="{{ route('video.show', $next->id) }}">Next video</a>
 				@endif
 			</div>
 		</div>
@@ -62,12 +62,12 @@
 				</div>
 
 				<div class="my-1">
-					<a href="{{ route('video.show', ['video' => $video->id]) }}">
+					<a href="{{ route('video.show', $video->id) }}">
 						{{ $video->file_name_without_extension }}
 					</a>
 				</div>
 				<div class="text-info my-1 d-none">
-					<a href="{{ route('render_video', ['video' => $video->id]) }}" target="_blank">Open video directly</a>
+					<a href="{{ route('render_video', $video->id) }}" target="_blank">Open video directly</a>
 				</div>
 				<div>
 					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small>

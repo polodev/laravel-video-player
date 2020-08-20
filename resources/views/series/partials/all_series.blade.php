@@ -11,7 +11,7 @@
 					</div>
 					<div class='col-sm-3'>
 						<div class="d-flex justify-content-end">
-							<a class="btn btn-primary mr-2" href="{{ route('series.edit', ['series' => $series->id]) }}">Edit</a>
+							<a class="btn btn-primary mr-2" href="{{ route('series.edit', $series->id) }}">Edit</a>
 							<form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', ['series' => $series->id]) }}">
 								@csrf
 								@method('DELETE')
@@ -24,7 +24,7 @@
 				@if($series->topics)
 					<div class='py-2'>
 						@foreach ($series->topics as $topic)
-							<a class="btn btn-primary" href="{{ route('topic.show', ['topic' => $topic->id]) }}">
+							<a class="btn btn-primary" href="{{ route('topic.show', $topic->id) }}">
 								{{$topic->title}}
 							</a>
 						@endforeach
