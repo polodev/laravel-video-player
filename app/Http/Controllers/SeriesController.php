@@ -200,7 +200,10 @@ class SeriesController extends Controller
       if (! $video_table_args) {
         return 'Path not found ';
       }
-      Video::insert($video_table_args);
+      foreach ($video_table_args as $single_video_args) {
+        Video::create( $single_video_args );
+      }
+
       return back()->withMessage('Generate Videos Successfully');
     }
     public function delete_videos(Series $series) {

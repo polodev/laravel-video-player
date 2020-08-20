@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->bigIncrements('id');
             $table->string('extension');
             $table->text('path_name');
+            $table->string('slug');
             $table->text('file_name');
             $table->string('file_type')->default('video');
             $table->text('file_name_without_extension');
