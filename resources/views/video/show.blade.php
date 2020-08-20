@@ -62,12 +62,12 @@
 				</div>
 
 				<div class="my-1">
-					<a href="{{ route('video.show', $video->id) }}">
+					<a href="{{ route('video.show', $video) }}">
 						{{ $video->file_name_without_extension }}
 					</a>
 				</div>
 				<div class="text-info my-1 d-none">
-					<a href="{{ route('render_video', $video->id) }}" target="_blank">Open video directly</a>
+					<a href="{{ route('render_video', $video) }}" target="_blank">Open video directly</a>
 				</div>
 				<div>
 					<small> <span class="text-info">Path:</span> {{ $video->path_name }} </small>
