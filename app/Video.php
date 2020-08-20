@@ -27,7 +27,7 @@ class Video extends Model
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('file_name')
+            ->generateSlugsFrom('file_name_without_extension')
             ->saveSlugsTo('slug');
     }
 	protected $guarded = [];
