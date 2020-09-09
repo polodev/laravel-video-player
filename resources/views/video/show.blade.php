@@ -30,6 +30,15 @@
         </my-pdf>
       @endif
 		</div>
+    <div class='my-2'>
+      <h2>
+        {{ $current_video->file_name_without_extension }}
+        <small>
+         (Media-no:  {{ $current_video->video_index() + 1 }} / {{ $all_videos_count }})   
+
+        </small>
+      </h2>
+    </div>
 		<div class='my-2'>
 			<p>
 				You are watching Series:: <a href="{{ route('series.show', $current_video->series->id) }}">{{ $current_video->series->title }}</a>
