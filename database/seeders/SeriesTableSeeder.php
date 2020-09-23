@@ -1,4 +1,6 @@
 <?php
+namespace Database\Seeders;
+
 
 use App\Libraries\Helper;
 use App\Series;
