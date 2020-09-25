@@ -149,7 +149,7 @@ class SeriesController extends Controller
       $series->delete();
       return redirect()->route('series.index');
     }
-    public function generate_video_args(Series $series)
+    public function generate_video_args(Series $series, $allowed_extension = ['mp4', 'avi', 'mov', 'm4v', 'mkv', 'webm', 'pdf',])
     {
       $url               = $series->url;
       if (! File::exists($url)) {
@@ -157,7 +157,6 @@ class SeriesController extends Controller
       }
       $series_id         = $series->id;
       $files             = File::allFiles($url);
-      $allowed_extension = ['mp4', 'avi', 'mov', 'm4v', 'mkv', 'webm', 'pdf',];
       $files             = array_filter($files, function ($file) use($allowed_extension) {
         $extension =  $file->getExtension();
         $extension = strtolower($extension);
@@ -209,5 +208,26 @@ class SeriesController extends Controller
     public function delete_videos(Series $series) {
       Video::where('series_id', $series->id)->delete();
       return back()->withMessage('Remove videos successfully');
+    }
+
+
+    public function series_video_merge(Series $series)
+    {
+        // Unlink Output video
+        // now add all
+      $video_table_args = $this->generate_video_args($series, ['mp4', 'avi', 'mov']);
+      if (! $video_table_args) {
+        return 'Path not found ';
+      }
+      $content = "";
+      foreach ($video_table_args as $single_file) {
+        $content .= "file " . $single_file['path_name'] . "\n";
+      }
+      file_put_contents("mylist.txt", $content);
+      $command = "/usr/bin/ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4";
+      $output = exec($command);
+      return $command;
+      // return $video_table_args;
+      return back()->withMessage('Merge Videos Successfully');
     }
   }

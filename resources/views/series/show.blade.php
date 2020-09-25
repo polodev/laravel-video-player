@@ -41,6 +41,12 @@
       Generate / Regenerate Videos
     </button>
   </form>
+  <form class="d-inline-block" method="post" action="{{ route('series.series_video_merge', $series) }}">
+    @csrf
+    <button type="submit" class='btn btn-info'>
+      Merge Videos
+    </button>
+  </form>
   <form class="d-inline-block" method="post" action="{{ route('series.delete_videos', $series) }}">
     @csrf
     <button type="submit" class='btn btn-danger'>
