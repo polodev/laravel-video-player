@@ -7,6 +7,7 @@ use App\Topic;
 use App\Video;
 use File;
 use Illuminate\Http\Request;
+use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 
 class SeriesController extends Controller
 {
@@ -216,17 +217,19 @@ class SeriesController extends Controller
         // Unlink Output video
         // now add all
       $video_table_args = $this->generate_video_args($series, ['mp4', 'avi', 'mov']);
+      $output_file = "full-video-". $series->slug . ".mp4";
+      // return $video_table_args;
       if (! $video_table_args) {
         return 'Path not found ';
       }
-      $content = "";
+      $video_paths = [];
       foreach ($video_table_args as $single_file) {
-        $content .= "file " . $single_file['path_name'] . "\n";
+        $video_paths[] = "file://" . $single_file['path_name'];
       }
-      file_put_contents("mylist.txt", $content);
-      $command = "/usr/bin/ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4";
-      $output = exec($command);
-      return $command;
+      FFMpeg::openUrl( $video_paths )
+      ->export()
+      ->concatWithoutTranscoding()
+      ->save($output_file);
       // return $video_table_args;
       return back()->withMessage('Merge Videos Successfully');
     }
