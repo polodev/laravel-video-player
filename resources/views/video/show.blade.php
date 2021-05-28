@@ -41,7 +41,7 @@
     </div>
 		<div class='my-2'>
 			<p>
-				You are watching Series:: <a href="{{ route('series.show', $current_video->series->id) }}">{{ $current_video->series->title }}</a>
+				You are watching Series:: <a href="{{ route('series.show', $current_video->series) }}">{{ $current_video->series->title }}</a>
 			</p>
       <p> Path:</p>
       <p>{{ $current_video->path_name }}</p>
