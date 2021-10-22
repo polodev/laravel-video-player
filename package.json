@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "@videojs/http-streaming": "^1.10.1",
-        "video.js": "^7.5.4",
+        "video.js": "^7.14.3",
         "videojs-hotkeys": "^0.2.25"
     }
 }
