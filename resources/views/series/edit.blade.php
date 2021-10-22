@@ -3,7 +3,11 @@
 @section('content')
 
 <div class=''>
-	<h2>Add a series</h2>
+	<h2>
+    Edit series
+    <a href="{{ route('series.show', $series) }}">{{ $series->id }}</a>
+</h2>
+
 
 	<form action="{{ route('series.update', $series) }}" method="post">
 		@csrf

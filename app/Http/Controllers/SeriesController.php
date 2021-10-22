@@ -135,8 +135,7 @@ class SeriesController extends Controller
         $topic_ids = request('topic');
         $series->topics()->attach($topic_ids);
       }
-
-      return back()->withMessage('Updated  successfully');
+      return redirect()->route('series.edit', $series)->withMessage('Updated  successfully');
     }
 
     /**

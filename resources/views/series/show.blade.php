@@ -2,7 +2,7 @@
 
 @section('content')
 <h2>
-	SERIES:: {{ $series->title }}
+	SERIES:: {{ $series->title }} - {{ $series->videos->count() }}
 </h2>
 <div class="my-3 d-flex align-items-center">
   <p class="mr-2">
