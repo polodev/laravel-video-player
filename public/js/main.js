@@ -1,7 +1,7 @@
 function scroll_video_wrapper() {
   var $video_wrapper = $('.video_wrapper');
   $video_wrapper.each(function () {
-    var $video_wrapper_offset = $video_wrapper.offset().top;
+    var $video_wrapper_offset = $video_wrapper.offset().top - 5;
     $("html, body").animate({ scrollTop: $video_wrapper_offset }, 1000);
   });
 }

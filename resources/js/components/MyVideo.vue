@@ -16,7 +16,15 @@
       next_url: {
         type: String,
         default: null
+      },
+      video_width: {
+        type: Number,
+        // default: function() {
+        //   return $('#video-player-card').width();
+        // }
+        default: $('#video-player-card').width(),
       }
+
     },
     data() {
       return {
@@ -26,7 +34,8 @@
           muted: false,
           language: 'en',
           preload: 'auto',
-          width: $('#video-player-card').width() || 600,
+          // width: $('#video-player-card').width() || 600,
+          width: this.video_width,
           playbackRates: [0.7, 1.0, 1.5, 2.0, 2.5, 3.0],
           sources: [
             {
