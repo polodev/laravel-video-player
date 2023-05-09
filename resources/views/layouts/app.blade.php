@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <div class="mx-5">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -85,7 +85,7 @@
         </nav>
 
         <main class="py-4">
-            <div class='container'>
+            <div class='mx-5 my-2'>
                 @include('partials/errors')
                 @include('partials/message')
                 @yield('content')
