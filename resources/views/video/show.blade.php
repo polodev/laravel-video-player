@@ -17,7 +17,7 @@
 		<div class="d-flex justify-content-center">
       @if ($current_video->file_type == 'video')
         <my-video
-          video_width="1300"
+          video_width="1400"
           video_source="{{$current_render_link}}"
           @if($next)
             next_url="{{ route('video.show', $next) }}"
