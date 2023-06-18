@@ -1,60 +1,6 @@
 ## Personal Video Player 
-
 Personal video player in your localhost (for developer people). You definitely will leave vlc, kmp, wmp forever...
 
-This project build with laravel, vuejs & videojs for personal use. I find its very helpful who try to be organize 
-his/her media. 
-
-
-Video Player features 
-
---------------------
-
-* You can make a topic for series. (eg topic: `wordpress`, `php`, `entertainment`, `telegu movie`)
-* You can add a series under a topic 
-
-a series have 2 fields. `title` and `url`. `Url` will be absolute path of a media folder. 
-
-
-~~~
-eg.
-
-title: Advanced WordPress_ Action and Filter Hooks
-url: /Users/polodev/Documents/tuts_video/lyn/paid/Advanced WordPress_ Action and Filter Hooks
-
-~~~
-
-* You can search all series (globally)
-
-* You can search topics (only in topic listing page)
-
-* You can keep some series hidden (in edit section) which  listed on `series-hidden` slug ( :) Privacy in mind ). you have to type those slug in address bar manually
-
-* You can increase video speed which will be stored in local storage. 
-
-* Having next and previous video link beneath the video player . 
-
-* Next video will automatically loaded
-
-
-## todo / or contribution ?
-
-[x] adding seeking option for video player
-
-
-
-
-## Technology
-
-frontend: 
-
-* Bootstrap 5
-* Vue js 2.*
-* videojs
-
-Backend:
-
-* Laravel 10
 
 ## How to run this project
 
@@ -114,8 +60,7 @@ Basic php server  using `artisan`
 ~~~bash
 php artisan serve
 ~~~
-
-
+P
 Once you serving, step will be followed for a series
 
 * create a topic 
@@ -123,5 +68,53 @@ Once you serving, step will be followed for a series
 * go to that topic and generate videos
 * start watching 
 
+
+# About this Project
+This project build with laravel, vuejs & videojs for personal use. I find its very helpful who try to be organize 
+his/her media. 
+
+
+Video Player features 
+
+--------------------
+
+* You can make a topic for series. (eg topic: `Php`, `Entertainment`, `Telegu movies`)
+
+* You can add a series under a topic 
+
+a series have 2 fields. `title` and folder `url`. `Url` will be absolute path of a media folder. 
+
+# A `url` look like following
+~~~
+/Users/polodev/tuts/udemy/Udemy-become-a-wordpress-developer-php-javascript
+~~~
+
+* You can search all series (globally)
+
+* You can search topics (only in topic listing page)
+
+* You can keep some series hidden (in edit section) which  listed on `series-hidden` slug ( :) Privacy in mind ). you have to type those slug in address bar manually
+
+* You can increase video speed which will be stored in local storage. 
+
+* Having next and previous video link beneath the video player . 
+
+* Next video will automatically loaded
+
+
+## Todo / or Contribution ?
+
+[x] adding seeking option for video player
+
+
+## Technology
+
+### frontend: 
+* Bootstrap 5
+* Vue js 2.*
+* videojs
+
+#### Backend:
+* Laravel 10
 
 
