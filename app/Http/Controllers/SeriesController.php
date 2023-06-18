@@ -8,6 +8,8 @@ use App\Video;
 use File;
 use Illuminate\Http\Request;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
+use Illuminate\Support\Str;
+
 
 class SeriesController extends Controller
 {
@@ -176,7 +178,7 @@ class SeriesController extends Controller
 
       $video_table_args = [];
 
-      foreach ($files as $file) {
+      foreach ($files as $index => $file) {
         $extension = $file->getExtension() ;
         $file_type = $extension == 'pdf' ? 'pdf' : 'video';
         $path_name = $file->getPathname() ;
@@ -189,6 +191,7 @@ class SeriesController extends Controller
           'file_type' => $file_type,
           'file_name' => $file_name,
           'file_name_without_extension' => $file_name_without_extension,
+          'slug' => Str::slug($file_name_without_extension . '-' . $index, '-'),
           'series_id' => $series_id,
         ];
 
@@ -205,9 +208,7 @@ class SeriesController extends Controller
       if (! $video_table_args) {
         return 'Path not found ';
       }
-      foreach ($video_table_args as $single_video_args) {
-        Video::create( $single_video_args );
-      }
+      Video::insert($video_table_args);
 
       return back()->withMessage('Generate Videos Successfully');
     }
