@@ -12,10 +12,12 @@ First clone project from github and cd into this project inside terminal
 ~~~bash
 git clone https://github.com/polodev/laravel-video-player
 cd laravel-video-player
-cp .env.example .env
 ~~~
 
 copy `.env.example` file to `.env` and give your database credential 
+~~~bash
+cp .env.example .env
+~~~
 
 ~~~bash
 DB_CONNECTION=mysql
@@ -25,16 +27,15 @@ DB_DATABASE=laravel_video_player
 DB_USERNAME=root
 DB_PASSWORD=
 ~~~
-in my case database name in `laravel_video_player`.
+In my case database name in `laravel_video_player`.
 
 ## website container class and default video width update 
-you can change website container class and default video width from `.env` file
+You can change website container class and default video width from `.env` file
 
 ~~~bash
 CONTAINER_CLASS=container
 VIDEO_WIDTH=1200
 ~~~
-
 
 
 ### Downloading composer package and dumping for autoload
@@ -61,8 +62,8 @@ Basic php server  using `artisan`
 ~~~bash
 php artisan serve
 ~~~
-P
-Once you serving, step will be followed for a series
+
+# Once you serving, step will be followed for a series
 
 * create a topic 
 * create a series add attached to topic 
@@ -75,8 +76,7 @@ This project build with laravel, vuejs & videojs for personal use. I find its ve
 his/her media. 
 
 
-Video Player features 
-
+### Video Player features 
 --------------------
 
 * You can make a topic for series. (eg topic: `Php`, `Entertainment`, `Telegu movies`)
@@ -86,6 +86,7 @@ Video Player features
 a series have 2 fields. `title` and folder `url`. `Url` will be absolute path of a media folder. 
 
 # A `url` look like following
+
 ~~~
 /Users/polodev/tuts/udemy/Udemy-become-a-wordpress-developer-php-javascript
 ~~~
