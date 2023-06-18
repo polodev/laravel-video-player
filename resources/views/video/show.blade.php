@@ -17,7 +17,7 @@
 		<div class="d-flex justify-content-center">
       @if ($current_video->file_type == 'video')
         <my-video
-          video_width="1400"
+          video_width="{{ config('global.video_width') }}"
           video_source="{{$current_render_link}}"
           @if($next)
             next_url="{{ route('video.show', $next) }}"
@@ -31,7 +31,7 @@
         </my-pdf>
       @endif
 		</div>
-    <div class='my-2'>
+    <div class='my-3'>
       <h2>
         {{ $current_video->file_name_without_extension }}
         <small>
@@ -42,7 +42,7 @@
     </div>
 		<div class='my-2'>
 			<p>
-				You are watching Series:: <a href="{{ route('series.show', $current_video->series) }}">{{ $current_video->series->title }}</a>
+				You are watching Series:: <a href="{{ route('series.show', $current_video->series->slug) }}">{{ $current_video->series->title }}</a>
 			</p>
       <p> Path:</p>
       <p>{{ $current_video->path_name }}</p>

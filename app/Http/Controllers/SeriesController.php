@@ -191,7 +191,7 @@ class SeriesController extends Controller
           'file_type' => $file_type,
           'file_name' => $file_name,
           'file_name_without_extension' => $file_name_without_extension,
-          'slug' => Str::slug($file_name_without_extension . '-' . $index, '-'),
+          'slug' => Str::slug($file_name_without_extension . '-' . Str::random(8), '-'),
           'series_id' => $series_id,
         ];
 

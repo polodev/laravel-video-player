@@ -48,13 +48,13 @@ url: /Users/polodev/Documents/tuts_video/lyn/paid/Advanced WordPress_ Action and
 
 frontend: 
 
-* Bootstrap 4
+* Bootstrap 5
 * Vue js 2.*
 * videojs
 
 Backend:
 
-* Laravel 5.8
+* Laravel 10
 
 ## How to run this project
 
@@ -64,7 +64,7 @@ official website [https://getcomposer.org/](https://getcomposer.org/)
 First clone project from github and cd into this project inside terminal
 
 ~~~bash
-git clone https://github.com/polodev/personal-video-player
+git clone https://github.com/polodev/laravel-video-player
 cd personal-video-player
 ~~~
 
@@ -74,31 +74,27 @@ copy `.env.example` file to `.env` and give your database credential
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=video_player
+DB_DATABASE=laravel_video_player
 DB_USERNAME=root
 DB_PASSWORD=
 ~~~
-in my case database name in `video_player`.
+in my case database name in `laravel_video_player`.
 
-optionally you can change app from environment file (`.env` file) 
+## website container class and default video width update 
+you can change website container class and default video width from `.env` file
 
 ~~~bash
-APP_NAME="Dev-Player"
+CONTAINER_CLASS=container
+VIDEO_WIDTH=1200
 ~~~
+
+
 
 ### Downloading composer package and dumping for autoload
 ~~~php
 composer install
-
-composer dump-autoload
-
 ~~~
 
-* Downloading npm packages (optional)
-~~~bash
-npm install
-npm run prod
-~~~
 
 ### Configure project
 
@@ -113,7 +109,7 @@ php artisan key:generate
 you can Serving laravel project from `xampp`, `wamp`, `laragon`, `valet` or basic php server.     
 
 
-basic php server  using `artisan`
+Basic php server  using `artisan`
 
 ~~~bash
 php artisan serve
@@ -126,8 +122,6 @@ Once you serving, step will be followed for a series
 * create a series add attached to topic 
 * go to that topic and generate videos
 * start watching 
-
-**Beware, I have only used in linux machine.**
 
 
 

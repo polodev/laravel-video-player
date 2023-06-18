@@ -12,7 +12,7 @@
 	<form action="{{ route('series.update', $series) }}" method="post">
 		@csrf
 		@method('PUT')
-		<div class='form-group'>
+		<div class='form-group mb-2'>
 			<label for="topic">Topic</label>
 			<select name="topic[]" class="form-control" id="topic" multiple>
 				@foreach ($topics as $topic)
@@ -20,17 +20,17 @@
 				@endforeach
 			</select>
 		</div>
-		<!-- /.form-group -->
-		<div class='form-group'>
+		<!-- /.form-group mb-2 -->
+		<div class='form-group mb-2'>
 			<label for="title">Title</label>
 			<input value="{{old('title', $series->title)}}" type="text" name="title" id="title" class="form-control">
 		</div>
-		<div class='form-group'>
+		<div class='form-group mb-2'>
 			<label for="url">Url</label>
 			<input value="{{old('url', $series->url)}}" type="text" name="url" id="url" class="form-control">
 		</div>
 
-		<div class='form-group'>
+		<div class='form-group mb-2'>
 			<label for="hidden">Hidden</label>
 			<select class="form-control" name="hidden" id="hidden">
 				<option {{ old('hidden', $series->hidden) == 0 ? 'selected' : '' }} value="0">false</option>
@@ -39,7 +39,7 @@
 		</div>
 
 
-		<div class='form-group'>
+		<div class='form-group mb-2'>
 			<button type="submit" class="btn btn-info">Update</button>
 		</div>
 	</form>

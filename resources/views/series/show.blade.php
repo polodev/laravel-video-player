@@ -2,10 +2,10 @@
 
 @section('content')
 <h2>
-	SERIES:: {{ $series->title }} - {{ $series->videos->count() }}
+	SERIES:: {{ $series->id }} {{ $series->title }} - {{ $series->videos->count() }}
 </h2>
 <div class="my-3 d-flex align-items-center">
-  <p class="mr-2">
+  <p class="me-2">
     Unders topics::
   </p>
   @if($series->topics)
@@ -21,9 +21,9 @@
 </div>
 
 <div class="my-3 d-flex align-items-center">
-  <p class="mr-2">Action:: </p>
+  <p class="me-2">Action:: </p>
   <div class="d-flex">
-    <a class="btn btn-primary mr-2" href="{{ route('series.edit', $series) }}">Edit</a>
+    <a class="btn btn-primary me-2" href="{{ route('series.edit', $series) }}">Edit</a>
     <form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', $series) }}">
       @csrf
       @method('DELETE')
@@ -66,11 +66,11 @@
           Video No: {{ Helper::getVideoIndex($series->videos, $video) }}  <br/>
 				</div>
 
-				<div class="my-1">
-					<a href="{{ route('video.show', $video) }}">
-						{{ $video->file_name_without_extension }}
-					</a>
-				</div>
+        <div class="my-1">
+          <a href="{{ route('video.show', $video) }}">
+            {{ $video->file_name_without_extension }}
+          </a>
+        </div>
 				<div class="text-info my-1 d-none">
 					<a href="{{$video->fullPathWithPrefix}}" target="_blank">Open video directly</a>
 				</div>

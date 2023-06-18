@@ -11,7 +11,7 @@
 					</div>
 					<div class='col-sm-3'>
 						<div class="d-flex justify-content-end">
-							<a class="btn btn-primary mr-2" href="{{ route('series.edit', $series) }}">Edit</a>
+							<a class="btn btn-primary me-2" href="{{ route('series.edit', $series) }}">Edit</a>
 							<form onsubmit="return confirm('Are you sure you want to delete this?')" method="post" action="{{ route('series.destroy', $series) }}">
 								@csrf
 								@method('DELETE')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Series;
 use App\Topic;
 use App\Video;
 use App\VideoStream;
@@ -79,7 +80,7 @@ class VideoController extends Controller
     public function show(Video $video)
     {
 
-      $series_id          = $video->series_id;
+      $series_id = $video->series_id;
       $previous           = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
       $next               = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
       $all_videos         = Video::where('series_id', $series_id)->get();

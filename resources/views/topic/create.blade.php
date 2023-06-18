@@ -7,11 +7,11 @@
 
 	<form action="{{ route('topic.store') }}" method="post">
 		@csrf
-		<div class='form-group'>
+		<div class='mb-2'>
 			<label for="title">Title</label>
 			<input type="text" name="title" id="title" class="form-control">
 		</div>
-		<div class='form-group'>
+		<div class='mb-2'>
 			<button type="submit" class="btn btn-info">Add</button>
 		</div>
 	</form>

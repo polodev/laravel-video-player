@@ -8,8 +8,6 @@ use Spatie\Sluggable\SlugOptions;
 
 class Video extends Model
 {
-    use HasSlug;
-
     public function getRouteKey()
     {
       return $this->slug;
@@ -20,16 +18,6 @@ class Video extends Model
         return 'slug';
     }
 
-
-    /**
-     * Get the options for generating the slug.
-     */
-    public function getSlugOptions() : SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('file_name_without_extension')
-            ->saveSlugsTo('slug');
-    }
 	protected $guarded = [];
 	public function series()
 	{
