@@ -12,7 +12,7 @@ First clone project from github and cd into this project inside terminal
 ~~~bash
 git clone https://github.com/polodev/laravel-video-player
 cd laravel-video-player
-cp .env-example .env
+cp .env.example .env
 ~~~
 
 copy `.env.example` file to `.env` and give your database credential 
