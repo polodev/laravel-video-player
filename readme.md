@@ -1,4 +1,4 @@
-## Personal Video Player 
+## Laravel Video Player 
 Personal video player in your localhost (for developer people). You definitely will leave vlc, kmp, wmp forever...
 
 
