@@ -43,10 +43,9 @@ class Video extends Model
     return "file://" . $path_name;
   }
 
-  public function video_index() {
+  public function video_index($all_videos) {
 
-  	$videos = Video::where('series_id', $this->series_id)->get()->toArray();
-
+  	$videos = $all_videos->toArray();
   	foreach($videos as $key => $video) {
   		if ($video['id'] === $this->id) {
   			return $key;

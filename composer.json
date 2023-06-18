@@ -17,8 +17,11 @@
         "spatie/laravel-sluggable": "^3.4.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.8",
         "beyondcode/laravel-dump-server": "^1.0",
+        "beyondcode/laravel-query-detector": "^1.7",
         "filp/whoops": "^2.0",
+        "laravel/telescope": "^4.14",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.0",

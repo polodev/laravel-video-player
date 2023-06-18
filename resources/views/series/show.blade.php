@@ -63,7 +63,7 @@
 		<div class='card my-2'>
 			<div class='card-body'>
 				<div class='my-1'>
-					Video No: {{ $video->video_index() + 1 }}  <br/>
+          Video No: {{ Helper::getVideoIndex($series->videos, $video) }}  <br/>
 				</div>
 
 				<div class="my-1">

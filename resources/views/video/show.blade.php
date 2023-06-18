@@ -7,7 +7,7 @@
 		<h2>
 			{{ $current_video->file_name_without_extension }}
 			<small>
-       (Media-no:  {{ $current_video->video_index() + 1 }} / {{ $all_videos_count }})   
+       (Media-no:  {{Helper::getVideoIndex($all_videos, $current_video)}} / {{ $all_videos_count }})
 
       </small>
 		</h2>
@@ -35,7 +35,7 @@
       <h2>
         {{ $current_video->file_name_without_extension }}
         <small>
-         (Media-no:  {{ $current_video->video_index() + 1 }} / {{ $all_videos_count }})   
+         (Media-no:  {{Helper::getVideoIndex($all_videos, $current_video)}} / {{ $all_videos_count }})
 
         </small>
       </h2>
@@ -68,7 +68,7 @@
 		<div class='card my-2 {{ $video->id === $current_video->id ? 'bg-warning text-white' : ''}}'>
 			<div class='card-body'>
 				<div class='mb'>
-					Video No: {{ $video->video_index() + 1 }}  <br>
+					Video No: {{ Helper::getVideoIndex($all_videos, $video) }}  <br>
 				</div>
 
 				<div class="my-1">

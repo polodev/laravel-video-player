@@ -82,8 +82,8 @@ class VideoController extends Controller
       $series_id          = $video->series_id;
       $previous           = Video::where('series_id', $series_id)->where('id', '<', $video->id)->orderBy('id','desc')->first();
       $next               = Video::where('series_id', $series_id)->where('id', '>', $video->id)->orderBy('id')->first();
-      $all_videos         = $video->series->videos;
-      $all_videos_count = $video->series->videos->count();
+      $all_videos         = Video::where('series_id', $series_id)->get();
+      $all_videos_count = $all_videos->count();
       if ($video->file_type == 'video') {
         $current_render_link = route('render_video', $video);
       }else {
@@ -98,11 +98,7 @@ class VideoController extends Controller
         'current_video'      => $video,
         'current_render_link' => $current_render_link,
         ];
-
-
-
         return view('video.show', $data);
-
     }
 
     /**
