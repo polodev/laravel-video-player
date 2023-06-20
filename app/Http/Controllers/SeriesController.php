@@ -178,6 +178,7 @@ class SeriesController extends Controller
 
       $video_table_args = [];
 
+      $no_of_videos = count($files);
       foreach ($files as $index => $file) {
         $extension = $file->getExtension() ;
         $file_type = $extension == 'pdf' ? 'pdf' : 'video';
@@ -191,7 +192,7 @@ class SeriesController extends Controller
           'file_type' => $file_type,
           'file_name' => $file_name,
           'file_name_without_extension' => $file_name_without_extension,
-          'slug' => 'video-no-' . ($index+1) . '-' . Str::slug($file_name_without_extension) .  '-' . Str::random(8),
+          'slug' => 'video-no--' . ($index+1) . '-of-'. $no_of_videos . '--' . Str::slug($file_name_without_extension) .  '-' . Str::random(8),
           'series_id' => $series_id,
         ];
 
