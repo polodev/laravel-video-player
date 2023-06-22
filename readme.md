@@ -109,9 +109,9 @@ a series have 2 fields. `title` and folder `url`. `Url` will be absolute path of
 
 ![image-2](./readme-images/1-list-of-series-view.jpg)
 
-![image-3](./readme-images/2-single-series-where-we-can-generate-videos.jpg)
+![image-3](./readme-images/2-single-series-where-we-can-generate-videos.png)
 
-![image-4](./readme-images/3-video-player.jpg)
+![image-4](./readme-images/3-video-player.png)
 
 
 
