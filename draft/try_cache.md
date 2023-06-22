@@ -1,1 +1,0 @@
---disable-web-security --allow-file-access-from-files --allow-file-access
