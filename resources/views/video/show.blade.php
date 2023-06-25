@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Video: ' .  $current_video->file_name_without_extension )
+
 
 @section('content')
 
