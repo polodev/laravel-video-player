@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'List of Topics')
+
 
 @section('content')
 <div class=''>

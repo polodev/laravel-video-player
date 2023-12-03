@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'Single Series: ' .  $series->title )
+
+
 @section('content')
 <h2>
 	SERIES:: {{ $series->id }} {{ $series->title }} - {{ $series->videos->count() }}
