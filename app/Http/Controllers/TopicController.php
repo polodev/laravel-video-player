@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Topic;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class TopicController extends Controller

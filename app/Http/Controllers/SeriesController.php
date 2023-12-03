@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Series;
-use App\Topic;
-use App\Video;
+use App\Models\Series;
+use App\Models\Topic;
+use App\Models\Video;
 use File;
 use Illuminate\Http\Request;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
