@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'All Series')
+
+
 @section('content')
 <div class=''>
 	<h2>All series</h2>

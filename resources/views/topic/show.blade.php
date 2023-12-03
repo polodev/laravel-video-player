@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Single Topic: ' .  $topic->title )
 
 @section('content')
 <h2>
