@@ -28,6 +28,8 @@ Route::post('/series_video_merge/{series}', 'SeriesController@series_video_merge
 
 Route::resource('/topic', 'TopicController');
 Route::resource('/bookmarks', 'BookmarkController');
+Route::post('/add-to-bookmark/{bookmark}', 'BookmarkController@add_to_bookmark')->name('bookmarks.add_to_bookmark');
+Route::post('/remove-from-bookmark/{bookmark}', 'BookmarkController@remove_from_bookmark')->name('bookmarks.remove_from_bookmark');
 
 Auth::routes();
 

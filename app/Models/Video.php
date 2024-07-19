@@ -42,5 +42,9 @@ class Video extends Model
   	}
   	return 0;
   }
+  public function bookmarks()
+  {
+    return $this->belongsToMany(Bookmark::class, 'bookmark_video');
+  }
 
 }

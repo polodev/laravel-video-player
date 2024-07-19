@@ -18,6 +18,7 @@
 					<h4>
 						<a href="{{ route('bookmarks.show', $bookmark) }}">
 							 {{ $bookmark->title }} 
+							 ({{ $bookmark->videos_count }})
 							 {{-- @if($topic->series)
 							 	- ({{count($topic->series)}})
 							 @endif --}}

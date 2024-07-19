@@ -8,14 +8,29 @@
 	</a>
 	 {{ $bookmark->title }}
 </h2>
-{{-- @if(count($topic->series))
-	<p>All Series under {{$topic->title}} </p>
-	@component('series.partials.all_series', ['all_series' => $paginate_series,])
-	@endcomponent
-	{{$paginate_series->links()}}
+@if(count($bookmark->videos))
+	@foreach($bookmark->videos as $video)
+		<div class="card my-1">
+			<div class="card-body">
+				<div class="d-lg-flex justify-content-between">
+					<a href="{{ route('video.show', $video) }}">
+						@if($series = $video->series)
+							{{ $series->title }}:::
+						@endif
+						{{ $video->file_name_without_extension }}
+					</a>
+					<form method="post" action="{{ route('bookmarks.remove_from_bookmark', $bookmark->id) }}">
+						@csrf
+						<input type="hidden" name="video_id" value="{{ $video->id }}">
+						<button type="submit" class="btn btn-warning">Remove Video</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	@endforeach
 @else
-	<h3>No series found for {{$topic->title}}</h3>
-@endif --}}
+	<h3>No Videos found for {{$bookmark->title}}</h3>
+@endif
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bookmark;
 use App\Models\Series;
 use App\Models\Topic;
 use App\Models\Video;
@@ -9,6 +10,7 @@ use App\VideoStream;
 use File;
 use Illuminate\Http\Request;
 use Response;
+use Cache;
 class VideoController extends Controller
 {
     /**
@@ -90,8 +92,10 @@ class VideoController extends Controller
       }else {
         $current_render_link = route('render_pdf', $video);
       }
+      $bookmarks =  Bookmark::with('videos')->get();
 
       $data = [
+        'bookmarks'         => $bookmarks,
         'all_videos'         => $all_videos,
         'all_videos_count'   => $all_videos_count,
         'next'               => $next,

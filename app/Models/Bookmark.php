@@ -12,6 +12,6 @@ class Bookmark extends Model
     protected $guarded = [];
     public function videos()
     {
-        return $this->belongsTo(Video::class, 'bookmark_video');
+        return $this->belongsToMany(Video::class, 'bookmark_video');
     }
 }

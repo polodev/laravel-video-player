@@ -46,8 +46,8 @@
 			<p>
 				You are watching Series:: <a href="{{ route('series.show', $current_video->series->slug) }}">{{ $current_video->series->title }}</a>
 			</p>
-      <p> Path:</p>
-      <p>{{ $current_video->path_name }}</p>
+      <p> Path:
+      {{ $current_video->path_name }}</p>
 			<div class="mt-2">
 				@if ($previous)
 					<a class="btn btn-info mx-1" href="{{ route('video.show', $previous) }}">Previous video</a>
@@ -55,6 +55,27 @@
 				@if ($next)
 					<a class="btn btn-info mx-1" href="{{ route('video.show', $next) }}">Next video</a>
 				@endif
+			</div>
+			<div class="card my-2">
+				<div class="card-body">
+					<p>
+						<strong>
+							Add to Bookmark
+						</strong>
+					</p>
+					@foreach($bookmarks as $bookmark)
+						<form class="d-inline-block m-1" method="post" action="{{ route('bookmarks.add_to_bookmark', $bookmark->id) }}">
+							@csrf
+							<input type="hidden" name="video_id" value="{{ $current_video->id }}">
+							<button type="submit" class="btn btn-warning">
+								{{ $bookmark->title }}
+								@if(in_array($current_video->id, $bookmark->videos->pluck('id')->toArray()))
+									(Added)
+								@endif
+							</button>
+						</form>
+					@endforeach	
+				</div>
 			</div>
 		</div>
 		<!-- /.my-2 -->
