@@ -18,7 +18,7 @@
             <a href='{{ route('topic.index') }}' class='nav-link'>Topics</a>
         </li>
         <li class="nav-item">
-            <a href='{{ route('topic.create') }}' class='nav-link'>Create Topic</a>
+            <a href='{{ route('bookmarks.index') }}' class='nav-link'>Bookmarks</a>
         </li>
       </ul>
       <form action="{{ route('series.index') }}" class="d-flex">

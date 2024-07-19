@@ -25,7 +25,9 @@ Route::get('/series-hidden', 'SeriesController@index_hidden');
 Route::post('/series_video_generate/{series}', 'SeriesController@generate_videos')->name('series.generate_videos');
 Route::post('/series_video_delete/{series}', 'SeriesController@delete_videos')->name('series.delete_videos');
 Route::post('/series_video_merge/{series}', 'SeriesController@series_video_merge')->name('series.series_video_merge');
+
 Route::resource('/topic', 'TopicController');
+Route::resource('/bookmarks', 'BookmarkController');
 
 Auth::routes();
 

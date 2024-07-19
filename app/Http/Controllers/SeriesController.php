@@ -41,7 +41,7 @@ class SeriesController extends Controller
     public function index_hidden()
     {
       $query = '';
-      $all_series = Series::where('hidden', 1)->latest()->paginate(15);
+      $all_series = Series::with('topics')->where('hidden', 1)->latest()->paginate(15);
       return view('series.index', compact('all_series', 'query'));
     }
 
